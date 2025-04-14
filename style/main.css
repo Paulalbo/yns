@@ -525,7 +525,7 @@ footer .paragraph {
   border: none;
   padding: 2px 5px;
   width: 100%;
-  min-height: 40px;
+  height: 40px;
 }
 
 @media (min-width: 992px) {
@@ -536,6 +536,13 @@ footer .paragraph {
 
 .teaser__form select, .teaser__form input {
   background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 .teaser__form .event-date {
