@@ -534,6 +534,14 @@ footer .paragraph {
   }
 }
 
+.teaser__form select, .teaser__form input {
+  background: #fff;
+}
+
+.teaser__form .event-date {
+  -webkit-appearance: none;
+}
+
 .teaser__form .event-submit {
   display: block;
   padding: 5px 15px;

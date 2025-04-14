@@ -2,6 +2,12 @@ import {features} from './features.js';
 
 await features();
 
+
+const input = document.querySelector('.event-date');
+const today = new Date().toISOString().split('T')[0]; // format: YYYY-MM-DD
+input.value = today;
+console.log(today);
+
 /* insert custom scripts below */
 
 
@@ -29,11 +35,3 @@ await features();
     });*/
 
     
-    // nav toggle
-
-    let mobileMenu = document.querySelector(".menu-icon");
-    let mobileContainer = document.querySelector(".nav-mobile");
-    mobileMenu.addEventListener("click", () => {
-        mobileContainer.classList.toggle("nav-mobile-active");
-        document.querySelector("body").classList.toggle("body-mobile-modal")
-    })
