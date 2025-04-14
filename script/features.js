@@ -4,7 +4,6 @@ import {observeColor, observeProjects, observeSection} from './features/observer
 
 
 async function features() {
-    await addComponent("nav", "nav");
     await addComponent("teaser", "teaser");
     await addComponent("footer", "footer");
     contentClasses();;

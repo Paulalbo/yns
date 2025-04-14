@@ -1,9 +1,9 @@
 .nav
     position: sticky
     top: 0
-    background: #fff
+    background: $color-primary-dark
     z-index: 999
-    border-bottom: 1px solid $color-primary
+    box-shadow: 0px 3px 6px 0px #0000004D
 
     &-mobile
         position: fixed
@@ -96,7 +96,8 @@
         @media screen and ( max-width:  750px)
             display: none
     &__item
-        color: $color-primary
+        color:  $color-white
+        font-weight: $weight-bold
         text-decoration: unset
         padding: 5px 20px 5px 0 
         &:hover
