@@ -197,11 +197,23 @@
 }
 
 .headline--1 {
-  font-size: 50px;
+  font-size: 35px;
+}
+
+@media (min-width: 920px) {
+  .headline--1 {
+    font-size: 50px;
+  }
 }
 
 .headline--2 {
-  font-size: 30px;
+  font-size: 20px;
+}
+
+@media (min-width: 920px) {
+  .headline--2 {
+    font-size: 30px;
+  }
 }
 
 .paragraph {
@@ -437,7 +449,7 @@ footer .paragraph {
 }
 
 .teaser {
-  padding: 10px 0;
+  padding: 10px;
   background-image: radial-gradient(circle, #911963 0%, #621645 100%);
   padding: 50px 0;
   display: -webkit-box;
@@ -467,7 +479,14 @@ footer .paragraph {
 }
 
 .teaser .paragraph {
-  font-size: 30px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+@media (min-width: 920px) {
+  .teaser .paragraph {
+    font-size: 28px;
+  }
 }
 
 .teaser__form {
@@ -477,30 +496,50 @@ footer .paragraph {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 3rem auto;
-  padding: 4px;
-  gap: 4px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 3rem 2rem;
   border-radius: 4px;
+  padding: 4px;
   background: #C0C0C0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  gap: 4px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  max-width: 450px;
+}
+
+@media (min-width: 920px) {
+  .teaser__form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 3rem auto;
+  }
 }
 
 .teaser__form select, .teaser__form input, .teaser__form button {
   border-radius: 4px;
   border: none;
   padding: 2px 5px;
+  width: 100%;
+  min-height: 40px;
 }
 
-.teaser__form .event-location, .teaser__form .event-date {
-  width: 150px;
+@media (min-width: 992px) {
+  .teaser__form select, .teaser__form input, .teaser__form button {
+    width: 33%;
+  }
 }
 
 .teaser__form .event-submit {
+  display: block;
   padding: 5px 15px;
   font-weight: 700;
   background-color: #EDBB24;
+  text-align: center;
 }
 
 .categories {
