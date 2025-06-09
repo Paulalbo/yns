@@ -604,4 +604,45 @@ footer .paragraph {
 .main {
   font-family: "hind-siliguri", Helvetica, Calibri, Sans-Serif;
 }
+
+.v-btn.v-btn-primary, .v-btn.v-btn-secondary {
+  font-size: 16px !important;
+}
+
+.content-holder {
+  padding-right: 30px !important;
+}
+
+.card-button {
+  all: unset !important;
+}
+
+.card-button::after {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  font-family: "oida-icomoon" !important;
+  content: "\e91f";
+  font-size: 30px;
+}
+
+.adress_sm {
+  font-size: 12px;
+}
+
+.v-filter {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+}
+
+.v-event {
+  background: #fff !important;
+}
+
+.v-event:first-child {
+  background: #FCF5FA !important;
+}
 /*# sourceMappingURL=main.css.map */
