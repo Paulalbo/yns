@@ -617,6 +617,10 @@ footer .paragraph {
   all: unset !important;
 }
 
+.card-button__grid::after {
+  all: unset !important;
+}
+
 .card-button::after {
   position: absolute;
   top: 50%;

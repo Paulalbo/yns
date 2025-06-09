@@ -1,0 +1,4962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="./assets/share-logo.png" />
+  <meta property="og:title" content="Skeleton">
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="skeleton">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <script src="./script/script.js" type="module" defer></script>
+  <title>Skeleton</title>
+  <style type="text/css">
+    @font-face {
+      font-family: "material";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/MaterialIcons-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "oida-icomoon";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/oida-icons.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "hind-siliguri";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/hind-siliguri-v12-latin-300.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "hind-siliguri";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/hind-siliguri-v12-latin-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "hind-siliguri";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/hind-siliguri-v12-latin-500.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "hind-siliguri";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/hind-siliguri-v12-latin-600.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "hind-siliguri";
+      src: url('https://www.yournextstories.com/xstorage/1/xs_system/fonts/hind-siliguri-v12-latin-700.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <style>
+    .w-100 {
+      width: 100% !important
+    }
+
+    .mb-1 {
+      margin-bottom: .25rem !important
+    }
+
+    .col-12,
+    .col-lg-12,
+    .col-md-12,
+    .col-md-4,
+    .col-md-8,
+    .col-sm-10,
+    .col-sm-12,
+    .col-xl-3,
+    .col-xl-7,
+    .col-xs-12 {
+      position: relative;
+      width: 100%;
+      padding-right: var(--utility-layout-gap);
+      padding-left: var(--utility-layout-gap)
+    }
+
+    .mb-2 {
+      margin-bottom: .5rem !important
+    }
+
+    .mb-5 {
+      margin-bottom: 3rem !important
+    }
+
+    .icon.icon-arrow-down.after:after {
+      content: "\e90d"
+    }
+
+    @media (min-width: 992px) {
+      .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+      }
+
+      .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+      }
+
+      .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+
+      .sitesearch-form {
+        margin: 0
+      }
+    }
+
+    .sitesearch-form {
+      position: relative;
+      height: 39px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: .5em;
+      border-radius: 15px;
+      border: 1px solid var(--color-primary);
+      padding: 0 15px
+    }
+
+    .sitesearch-form:before {
+      font-family: oida-icomoon !important;
+      font-family: icomoon;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e928";
+      color: var(--color-primary)
+    }
+
+    .sitesearch-form input {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background-color: transparent
+    }
+
+    i {
+      font-style: italic
+    }
+
+    .section-mt {
+      margin-top: var(--utility-layout-section-spacing-xs)
+    }
+
+    @media (min-width: 768px) {
+      .section-mt {
+        margin-top: var(--utility-layout-section-spacing-sm)
+      }
+    }
+
+    .v-filter {
+      position: fixed;
+      top: calc(var(--utility-header-height-dynamic) + 30px);
+      left: 0;
+      z-index: 500
+    }
+
+    .v-filter .v-filter-inner {
+      position: fixed;
+      left: 0;
+      top: var(--utility-header-height-dynamic);
+      width: 100%;
+      height: calc(var(--app-height) - var(--utility-header-height-dynamic));
+      background-color: var(--color-body);
+      padding: 44px 15px 15px;
+      transform: translateX(-100%);
+      overflow: auto
+    }
+
+    @media (min-width: 992px) {
+      .section-mt {
+        margin-top: var(--utility-layout-section-spacing-md)
+      }
+
+      .v-filter {
+        position: static
+      }
+
+      .v-filter .v-filter-inner {
+        position: static;
+        transform: none;
+        padding: 0 10px;
+        margin: 0 -10px;
+        overflow: visible;
+        height: auto
+      }
+
+      .xs-oida-filter-container {
+        display: flex;
+        flex-direction: column
+      }
+    }
+
+    .form-holder {
+      position: relative;
+      z-index: 10;
+      max-width: none;
+      width: 100%
+    }
+
+    .form-holder .sitesearch-form {
+      position: relative;
+      z-index: 1;
+      width: 100%
+    }
+
+    .form-holder .sitesearch-form input {
+      width: 100%;
+      position: relative;
+      font-size: 16px
+    }
+
+    .form-holder {
+      position: relative;
+      z-index: 10;
+      width: 100%
+    }
+
+    .form-holder .sitesearch-form {
+      position: relative;
+      z-index: 1
+    }
+
+    .form-holder .sitesearch-form input {
+      position: relative
+    }
+
+    .v-search {
+      margin-bottom: 30px;
+      width: 100%
+    }
+
+    .xs-oida-filter-container .filter {
+      background-color: var(--color-body);
+      box-shadow: 0 3px 6px rgba(0 0 0 / 30%);
+      border-radius: 15px;
+      opacity: 1;
+      padding: 10px
+    }
+
+    .xs-oida-filter-container h3 {
+      opacity: 1
+    }
+
+    .xs-oida-filter-container .xs-oida-filter-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px
+    }
+
+    .xs-oida-filter-container .xs-oida-filter-form:after {
+      content: ""
+    }
+
+    .xs-oida-filter-sort {
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px
+    }
+
+    .xs-oida-sort {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 30px
+    }
+
+    .xs-oida-sort .xs-oida-sort-holder {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px
+    }
+
+    .v-atom.v-collapse-input {
+      font-size: 16px
+    }
+
+    .v-atom.v-collapse-input .v-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 1em;
+      font-weight: 500
+    }
+
+    .v-atom.v-collapse-input .v-trigger i {
+      font-size: .3em
+    }
+
+    @media (min-width: 576px) {
+      .v-atom.v-collapse-input {
+        font-size: 16.66666667px
+      }
+    }
+
+    :root {
+      --cc-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      --cc-modal-border-radius: 0.5rem;
+      --cc-btn-border-radius: 0.4rem;
+      --cc-link-color: var(--cc-btn-primary-bg);
+      --cc-modal-margin: 1rem;
+      --cc-z-index: 2147483647;
+      --cc-bg: #fff;
+      --cc-primary-color: #2c2f31;
+      --cc-secondary-color: #5e6266;
+      --cc-btn-primary-bg: #30363c;
+      --cc-btn-primary-color: #fff;
+      --cc-btn-primary-border-color: var(--cc-btn-primary-bg);
+      --cc-btn-primary-hover-bg: #000;
+      --cc-btn-primary-hover-color: #fff;
+      --cc-btn-primary-hover-border-color: var(--cc-btn-primary-hover-bg);
+      --cc-btn-secondary-bg: #eaeff2;
+      --cc-btn-secondary-color: var(--cc-primary-color);
+      --cc-btn-secondary-border-color: var(--cc-btn-secondary-bg);
+      --cc-btn-secondary-hover-bg: #d4dae0;
+      --cc-btn-secondary-hover-color: #000;
+      --cc-btn-secondary-hover-border-color: #d4dae0;
+      --cc-separator-border-color: #f0f4f7;
+      --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+      --cc-toggle-off-bg: #667481;
+      --cc-toggle-on-knob-bg: #fff;
+      --cc-toggle-off-knob-bg: var(--cc-toggle-on-knob-bg);
+      --cc-toggle-enabled-icon-color: var(--cc-bg);
+      --cc-toggle-disabled-icon-color: var(--cc-bg);
+      --cc-toggle-readonly-bg: #d5dee2;
+      --cc-toggle-readonly-knob-bg: #fff;
+      --cc-toggle-readonly-knob-icon-color: var(--cc-toggle-readonly-bg);
+      --cc-section-category-border: var(--cc-cookie-category-block-bg);
+      --cc-cookie-category-block-bg: #f0f4f7;
+      --cc-cookie-category-block-border: #f0f4f7;
+      --cc-cookie-category-block-hover-bg: #e9eff4;
+      --cc-cookie-category-block-hover-border: #e9eff4;
+      --cc-cookie-category-expanded-block-bg: transparent;
+      --cc-cookie-category-expanded-block-hover-bg: #dee4e9;
+      --cc-overlay-bg: rgba(0, 0, 0, 0.65);
+      --cc-webkit-scrollbar-bg: var(--cc-section-category-border);
+      --cc-webkit-scrollbar-hover-bg: var(--cc-btn-primary-hover-bg);
+      --cc-footer-bg: var(--cc-btn-secondary-bg);
+      --cc-footer-color: var(--cc-secondary-color);
+      --cc-footer-border-color: #e4eaed;
+      --cc-pm-toggle-border-radius: 4em
+    }
+
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box
+    }
+
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%
+    }
+
+    figcaption,
+    figure,
+    footer,
+    header,
+    main,
+    nav,
+    section {
+      display: block
+    }
+
+    body {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left
+    }
+
+    h2,
+    h3,
+    h4,
+    h6 {
+      margin-top: 0;
+      margin-bottom: .5rem
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem
+    }
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 1rem
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent
+    }
+
+    figure {
+      margin: 0 0 1rem
+    }
+
+    img {
+      vertical-align: middle;
+      border-style: none
+    }
+
+    svg {
+      overflow: hidden;
+      vertical-align: middle
+    }
+
+    label {
+      display: inline-block
+    }
+
+    label:not(:last-of-type) {
+      margin-bottom: .5rem
+    }
+
+    button {
+      border-radius: 0
+    }
+
+    button,
+    input,
+    select {
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit
+    }
+
+    button,
+    input {
+      overflow: visible
+    }
+
+    button,
+    select {
+      text-transform: none
+    }
+
+    select {
+      word-wrap: normal
+    }
+
+    [type=button],
+    [type=submit],
+    button {
+      -webkit-appearance: button
+    }
+
+    [type=button]::-moz-focus-inner,
+    [type=submit]::-moz-focus-inner,
+    button::-moz-focus-inner {
+      padding: 0;
+      border-style: none
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+      box-sizing: border-box;
+      padding: 0
+    }
+
+    ::-webkit-file-upload-button {
+      font: inherit;
+      -webkit-appearance: button
+    }
+
+    .h1,
+    h2,
+    h3,
+    h4,
+    h6 {
+      margin-bottom: .5rem;
+      font-weight: 500;
+      line-height: 1.2
+    }
+
+    .h1 {
+      font-size: 2.5rem
+    }
+
+    h2 {
+      font-size: 2rem
+    }
+
+    h3 {
+      font-size: 1.75rem
+    }
+
+    h4 {
+      font-size: 1.5rem
+    }
+
+    h6 {
+      font-size: 1rem
+    }
+
+    .row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: calc(var(--utility-layout-gap) * -1);
+      margin-left: calc(var(--utility-layout-gap) * -1)
+    }
+
+    .col-12,
+    .col-lg-12,
+    .col-md-12,
+    .col-sm-10,
+    .col-sm-12,
+    .col-xs-12 {
+      position: relative;
+      width: 100%;
+      padding-right: var(--utility-layout-gap);
+      padding-left: var(--utility-layout-gap)
+    }
+
+    .col-12,
+    .col-xs-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%
+    }
+
+    @media (min-width: 768px) {
+      .v-atom.v-collapse-input {
+        font-size: 17.33333333px
+      }
+
+      .col-sm-10 {
+        -ms-flex: 0 0 83.333333%;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%
+      }
+
+      .col-sm-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+
+      .offset-sm-1 {
+        margin-left: 8.333333%
+      }
+    }
+
+    @media (min-width: 992px) {
+      .v-atom.v-collapse-input {
+        font-size: 18px
+      }
+
+      .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .section-mt {
+        margin-top: var(--utility-layout-section-spacing-lg)
+      }
+
+      .v-atom.v-collapse-input {
+        font-size: 18.66666667px
+      }
+
+      .col-lg-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+    }
+
+    .form-control {
+      display: block;
+      width: 100%
+    }
+
+    .form-control::-ms-expand {
+      background-color: transparent;
+      border: 0
+    }
+
+    .form-control::-webkit-input-placeholder {
+      color: #6c757d;
+      opacity: 1
+    }
+
+    .form-control::-moz-placeholder {
+      color: #6c757d;
+      opacity: 1
+    }
+
+    .form-control:-ms-input-placeholder {
+      color: #6c757d;
+      opacity: 1
+    }
+
+    .form-control::-ms-input-placeholder {
+      color: #6c757d;
+      opacity: 1
+    }
+
+    .form-group {
+      margin-bottom: 1rem
+    }
+
+    .fade:not(.show) {
+      opacity: 0
+    }
+
+    .collapse:not(.show) {
+      display: none
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1050;
+      display: none;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      outline: 0
+    }
+
+    .modal-dialog {
+      position: relative;
+      width: auto;
+      margin: .5rem
+    }
+
+    .modal.fade .modal-dialog {
+      -webkit-transform: translate(0, -50px);
+      transform: translate(0, -50px)
+    }
+
+    .modal-content {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, .2);
+      border-radius: .3rem;
+      outline: 0
+    }
+
+    .modal-header {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid #dee2e6;
+      border-top-left-radius: calc(.3rem - 1px);
+      border-top-right-radius: calc(.3rem - 1px)
+    }
+
+    .modal-title {
+      margin-bottom: 0;
+      line-height: 1.5
+    }
+
+    .modal-body {
+      position: relative;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      padding: 1rem
+    }
+
+    .modal-footer {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      padding: .75rem;
+      border-top: 1px solid #dee2e6;
+      border-bottom-right-radius: calc(.3rem - 1px);
+      border-bottom-left-radius: calc(.3rem - 1px)
+    }
+
+    .modal-footer>* {
+      margin: .25rem
+    }
+
+    @media (min-width: 768px) {
+      .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto
+      }
+    }
+
+    .clearfix::after {
+      display: block;
+      clear: both;
+      content: ""
+    }
+
+    .d-none {
+      display: none !important
+    }
+
+    .mb-3 {
+      margin-bottom: 1rem !important
+    }
+
+    .pt-3 {
+      padding-top: 1rem !important
+    }
+
+    .text-center {
+      text-align: center !important
+    }
+
+    .icon.after:after {
+      font-family: oida-icomoon !important;
+      font-family: icomoon;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .icon.icon-heart-empty.after:after {
+      content: "\e90f"
+    }
+
+    .icon.icon-oida.after:after {
+      content: "\e935"
+    }
+
+    .icon.icon-close.after:after {
+      content: "\e941"
+    }
+
+    .form-control,
+    input,
+    input.form-control {
+      border: none;
+      outline: 0;
+      box-shadow: none;
+      border-radius: 0;
+      height: 39px;
+      display: block;
+      width: 100%;
+      padding: 0 15px;
+      color: var(--color-dark);
+      border: 1px solid var(--color-primary);
+      border-radius: 15px;
+      font-weight: 300;
+      background-color: var(--color-body);
+      font-size: 12px;
+      filter: none
+    }
+
+    @media (min-width: 992px) {
+
+      .form-control,
+      input,
+      input.form-control {
+        font-size: 15px
+      }
+    }
+
+    .form-control::-webkit-input-placeholder,
+    input.form-control::-webkit-input-placeholder,
+    input::-webkit-input-placeholder {
+      font-weight: 300;
+      color: var(--color-dark)
+    }
+
+    .form-control:-webkit-autofill,
+    input.form-control:-webkit-autofill,
+    input:-webkit-autofill {
+      font-weight: 300;
+      -webkit-text-fill-color: var(--color-dark);
+      -webkit-box-shadow: 0 0 0 30px var(--color-body) inset
+    }
+
+    input[type=checkbox] {
+      display: none
+    }
+
+    input[type=checkbox]~.fakebox {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      min-height: 14px
+    }
+
+    input[type=checkbox]~.fakebox:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 1px solid var(--color-primary);
+      background-color: var(--color-body)
+    }
+
+    input[type=checkbox]~.fakebox:after {
+      font-size: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: oida-icomoon !important;
+      font-family: icomoon;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e91a";
+      color: var(--color-body)
+    }
+
+    input[type=checkbox]~.fakebox+span {
+      display: inline-block;
+      vertical-align: middle
+    }
+
+    input[type=radio] {
+      display: none
+    }
+
+    .form-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: .5em;
+      margin-bottom: 1.25em
+    }
+
+    .form-group.v-tinytext {
+      padding-right: 28px;
+      padding-left: 28px;
+      color: var(--color-secondary)
+    }
+
+    .form-group.v-tinytext input {
+      padding: 0
+    }
+
+    .xr_error {
+      height: 1.25em;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      font-size: .75em;
+      color: red;
+      font-weight: 500;
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      transform: translateY(100%);
+      line-height: 1;
+      left: 0;
+      z-index: 1;
+      background-color: var(--color-body)
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      width: 100%
+    }
+
+    button.xr_form_submit[type=submit] {
+      display: flex;
+      justify-content: center
+    }
+
+    .xr_form_submit_container {
+      display: flex;
+      align-items: center
+    }
+
+    .xr_form_submit_container .xr_form_submit {
+      margin-left: auto
+    }
+
+    @keyframes shine {
+      to {
+        background-position: right -200px top 0
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: var(--color-secondary)
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      background-color: var(--color-primary)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--color-primary);
+      border-radis: 5px
+    }
+
+    body,
+    html {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: var(--font-primary);
+      color: var(--color-font);
+      background-color: var(--color-secondary)
+    }
+
+    @media (min-width: 576px) {
+      html {
+        font-size: 15px
+      }
+    }
+
+    @media (min-width: 768px) {
+      html {
+        font-size: 16px
+      }
+    }
+
+    @media (min-width: 992px) {
+      html {
+        font-size: 17px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .modal-lg {
+        max-width: var(--utility-container-md)
+      }
+
+      input[type=checkbox]~.fakebox+span {
+        font-size: 20px
+      }
+
+      html {
+        font-size: 18px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      html {
+        font-size: 19px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      html {
+        font-size: 20px
+      }
+    }
+
+    body {
+      background-color: var(--color-body);
+      position: relative;
+      line-height: 1.42857143;
+      font-size: 14px
+    }
+
+    body.no-transition,
+    body.no-transition * {
+      animation: none !important
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: stretch
+    }
+
+    body .v-main {
+      flex: 1 0 100%;
+      position: relative
+    }
+
+    body .v-footer {
+      flex: 0 0 auto
+    }
+
+    [id] {
+      scroll-margin-top: var(--utility-header-height-xs)
+    }
+
+    img:not([src=""]) {
+      opacity: 1
+    }
+
+    img[src=""] {
+      opacity: 0
+    }
+
+    ul {
+      padding: 0 0 0 calc(var(--utility-layout-gap) * 2);
+      margin: 0
+    }
+
+    ul li {
+      margin: 0;
+      padding: 0
+    }
+
+    picture {
+      display: block
+    }
+
+    :root {
+      scroll-behavior: unset
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    .img {
+      max-width: 100%
+    }
+
+    .v-container {
+      position: relative;
+      padding-left: var(--utility-layout-gap);
+      padding-right: var(--utility-layout-gap);
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      width: 100%
+    }
+
+    .h1 {
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 600;
+      font-size: 25px
+    }
+
+    @media (min-width: 576px) {
+      .v-container {
+        max-width: var(--utility-container-xs)
+      }
+
+      .h1 {
+        font-size: 26.66666667px
+      }
+    }
+
+    @media (min-width: 768px) {
+      [id] {
+        scroll-margin-top: var(--utility-header-height-sm)
+      }
+
+      .v-container {
+        max-width: var(--utility-container-sm)
+      }
+
+      .h1 {
+        font-size: 28.33333333px
+      }
+    }
+
+    @media (min-width: 992px) {
+      body {
+        font-size: 16px
+      }
+
+      [id] {
+        scroll-margin-top: var(--utility-header-height-md)
+      }
+
+      .v-container {
+        max-width: var(--utility-container-md)
+      }
+
+      .h1 {
+        font-size: 30px
+      }
+    }
+
+    h2 {
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 600;
+      font-size: 18px
+    }
+
+    @media (min-width: 576px) {
+      h2 {
+        font-size: 18.66666667px
+      }
+    }
+
+    @media (min-width: 768px) {
+      h2 {
+        font-size: 19.33333333px
+      }
+    }
+
+    @media (min-width: 992px) {
+      h2 {
+        font-size: 20px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      [id] {
+        scroll-margin-top: var(--utility-header-height-lg)
+      }
+
+      .v-container {
+        max-width: var(--utility-container-lg)
+      }
+
+      .h1 {
+        font-size: 31.66666667px
+      }
+
+      h2 {
+        font-size: 20.66666667px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      [id] {
+        scroll-margin-top: var(--utility-header-height-xl)
+      }
+
+      .v-container {
+        max-width: var(--utility-container-xl)
+      }
+
+      .h1 {
+        font-size: 33.33333333px
+      }
+
+      h2 {
+        font-size: 21.33333333px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      [id] {
+        scroll-margin-top: var(--utility-header-height-xxl)
+      }
+
+      .v-container {
+        max-width: var(--utility-container-xxl)
+      }
+
+      .h1 {
+        font-size: 35px
+      }
+
+      h2 {
+        font-size: 22px
+      }
+    }
+
+    h3 {
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 600;
+      font-size: 16px
+    }
+
+    @media (min-width: 576px) {
+      h3 {
+        font-size: 16.66666667px
+      }
+    }
+
+    @media (min-width: 768px) {
+      h3 {
+        font-size: 17.33333333px
+      }
+    }
+
+    @media (min-width: 992px) {
+      h3 {
+        font-size: 18px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      h3 {
+        font-size: 18.66666667px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      h3 {
+        font-size: 19.33333333px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      h3 {
+        font-size: 20px
+      }
+    }
+
+    h4 {
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 600;
+      font-size: 14px
+    }
+
+    @media (min-width: 576px) {
+      h4 {
+        font-size: 14.66666667px
+      }
+    }
+
+    @media (min-width: 768px) {
+      h4 {
+        font-size: 15.33333333px
+      }
+    }
+
+    @media (min-width: 992px) {
+      h4 {
+        font-size: 16px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      h4 {
+        font-size: 16.66666667px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      h4 {
+        font-size: 17.33333333px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      h4 {
+        font-size: 18px
+      }
+    }
+
+    h6 {
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 600;
+      font-size: 10px
+    }
+
+    p:last-of-type {
+      margin-bottom: 0
+    }
+
+    a {
+      color: inherit
+    }
+
+    a:visited {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .btn,
+    .v-btn,
+    button {
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      line-height: 1;
+      background: 0 0;
+      color: inherit;
+      border-radius: 0;
+      gap: 10px;
+      font-weight: 600
+    }
+
+    .btn.btn-primary,
+    .v-btn.v-btn-primary,
+    button.btn-primary,
+    button.v-btn-primary {
+      background-color: var(--color-primary);
+      font-size: 16px;
+      padding: .48em .88em;
+      border-radius: 50px;
+      color: var(--color-body);
+      border: 1px solid var(--color-primary)
+    }
+
+    @media (min-width: 576px) {
+      h6 {
+        font-size: 10.33333333px
+      }
+
+      .btn.btn-primary,
+      .v-btn.v-btn-primary,
+      button.btn-primary,
+      button.v-btn-primary {
+        font-size: 17.5px
+      }
+    }
+
+    @media (min-width: 768px) {
+      h6 {
+        font-size: 10.66666667px
+      }
+
+      .btn.btn-primary,
+      .v-btn.v-btn-primary,
+      button.btn-primary,
+      button.v-btn-primary {
+        font-size: 19px
+      }
+    }
+
+    @media (min-width: 992px) {
+      h6 {
+        font-size: 11px
+      }
+
+      .btn.btn-primary,
+      .v-btn.v-btn-primary,
+      button.btn-primary,
+      button.v-btn-primary {
+        font-size: 20.5px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      h6 {
+        font-size: 11.33333333px
+      }
+
+      .btn.btn-primary,
+      .v-btn.v-btn-primary,
+      button.btn-primary,
+      button.v-btn-primary {
+        font-size: 22px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      h6 {
+        font-size: 11.66666667px
+      }
+
+      .btn.btn-primary,
+      .v-btn.v-btn-primary,
+      button.btn-primary,
+      button.v-btn-primary {
+        font-size: 23.5px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      h6 {
+        font-size: 12px
+      }
+
+      .btn.btn-primary,
+      .v-btn.v-btn-primary,
+      button.btn-primary,
+      button.v-btn-primary {
+        font-size: 25px
+      }
+    }
+
+    .btn.btn-secondary,
+    button.btn-secondary {
+      background-color: var(--color-body);
+      font-size: 16px;
+      padding: .48em .88em;
+      border-radius: 50px;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary)
+    }
+
+    @media (min-width: 576px) {
+
+      .btn.btn-secondary,
+      button.btn-secondary {
+        font-size: 17.5px
+      }
+    }
+
+    .js-mini-slider {
+      position: relative;
+      overflow: auto;
+      will-change: scroll-position;
+      scrollbar-width: none;
+      --columns: 1;
+      --gap: 15px
+    }
+
+    .js-mini-slider::-webkit-scrollbar {
+      display: none
+    }
+
+    .js-mini-slider .track {
+      --gap: var(--utility-layout-gap);
+      --columns: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap);
+      flex-wrap: nowrap;
+      height: 100%;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      min-width: 100%
+    }
+
+    .js-mini-slider .track>* {
+      flex: calc((100% / var(--columns)) - var(--gap) + (var(--gap)/ var(--columns)));
+      width: calc((100% / var(--columns)) - var(--gap) + (var(--gap)/ var(--columns)))
+    }
+
+    .js-mini-slider .track .single-item {
+      flex: 0 0 calc((100% / var(--columns)) - var(--gap) + (var(--gap)/ var(--columns)));
+      height: 100%
+    }
+
+    .js-mini-slider .track img {
+      -webkit-user-drag: none;
+      -moz-user-drag: none;
+      user-drag: none
+    }
+
+    .js-mini-slider.seamless {
+      --offset: 0;
+      --container-offset: calc((100vw - var(--utility-container-xs)) / 2);
+      overflow: hidden
+    }
+
+    .js-mini-slider.seamless .track {
+      overflow: auto;
+      scrollbar-width: none;
+      padding-left: 15px;
+      padding-right: 15px
+    }
+
+    .js-mini-slider.seamless .track::-webkit-scrollbar {
+      display: none
+    }
+
+    @media (min-width: 768px) {
+
+      .btn.btn-secondary,
+      button.btn-secondary {
+        font-size: 19px
+      }
+
+      .js-mini-slider.seamless .track {
+        --container-offset: calc((100vw - var(--utility-container-sm)) / 2);
+        padding-left: calc(var(--container-offset) + (var(--utility-container-sm)/ 12 * var(--offset)));
+        padding-right: calc(var(--container-offset) + (var(--utility-container-sm)/ 12 * var(--offset)))
+      }
+
+      .js-mini-slider.seamless.mini-col-sm-10 {
+        --offset: 1
+      }
+    }
+
+    @media (min-width: 992px) {
+
+      .btn.btn-secondary,
+      button.btn-secondary {
+        font-size: 20.5px
+      }
+
+      .js-mini-slider.seamless .track {
+        --container-offset: calc((100vw - var(--utility-container-md)) / 2);
+        padding-left: calc(var(--container-offset) + (var(--utility-container-md)/ 12 * var(--offset)));
+        padding-right: calc(var(--container-offset) + (var(--utility-container-md)/ 12 * var(--offset)))
+      }
+    }
+
+    @media (min-width: 1200px) {
+
+      .btn.btn-secondary,
+      button.btn-secondary {
+        font-size: 22px
+      }
+
+      .js-mini-slider.seamless .track {
+        --container-offset: calc((100vw - var(--utility-container-lg)) / 2);
+        padding-left: calc(var(--container-offset) + (var(--utility-container-lg)/ 12 * var(--offset)));
+        padding-right: calc(var(--container-offset) + (var(--utility-container-lg)/ 12 * var(--offset)))
+      }
+    }
+
+    @media (min-width: 1400px) {
+
+      .btn.btn-secondary,
+      button.btn-secondary {
+        font-size: 23.5px
+      }
+
+      .js-mini-slider.seamless .track {
+        --container-offset: calc((100vw - var(--utility-container-xl)) / 2);
+        padding-left: calc(var(--container-offset) + (var(--utility-container-xl)/ 12 * var(--offset)));
+        padding-right: calc(var(--container-offset) + (var(--utility-container-xl)/ 12 * var(--offset)))
+      }
+    }
+
+    @media (min-width: 1600px) {
+
+      .btn.btn-secondary,
+      button.btn-secondary {
+        font-size: 25px
+      }
+
+      .js-mini-slider.seamless .track {
+        --container-offset: calc((100vw - var(--utility-container-xxl)) / 2);
+        padding-left: calc(var(--container-offset) + (var(--utility-container-xxl)/ 12 * var(--offset)));
+        padding-right: calc(var(--container-offset) + (var(--utility-container-xxl)/ 12 * var(--offset)))
+      }
+    }
+
+    .modal .modal-dialog .modal-content {
+      border-radius: 15px;
+      border: 0
+    }
+
+    .modal .modal-dialog .modal-content .modal-header .modal-title {
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    .newsletter-flappy-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--color-primary);
+      border: none;
+      border-radius: 9999px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+      opacity: 1;
+      z-index: 100
+    }
+
+    .newsletter-flappy-button::after {
+      content: "\2709";
+      margin-top: 4px;
+      font-size: 28px;
+      line-height: 1;
+      color: #fff
+    }
+
+    .newsletter-flappy {
+      position: fixed;
+      inset: auto 0 0 0;
+      width: 100%;
+      padding: 20px 15px 15px;
+      color: #fff;
+      background-color: var(--color-primary);
+      z-index: 100;
+      -webkit-transform: translate(0, calc(100% + 25px));
+      -moz-transform: translate(0, calc(100% + 25px));
+      transform: translate(0, calc(100% + 25px));
+      border-radius: 15px
+    }
+
+    @media (min-width: 992px) {
+      .newsletter-flappy-button {
+        bottom: 35px;
+        right: 35px
+      }
+
+      .newsletter-flappy {
+        inset: auto;
+        right: 70px;
+        bottom: 70px;
+        width: 398px;
+        padding: 18px;
+        -webkit-transform: translate(calc(100% + 70px), 0);
+        -moz-transform: translate(calc(100% + 70px), 0);
+        transform: translate(calc(100% + 70px), 0)
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .newsletter-flappy {
+        right: 116px;
+        bottom: 116px;
+        -webkit-transform: translate(calc(100% + 116px), 0);
+        -moz-transform: translate(calc(100% + 116px), 0);
+        transform: translate(calc(100% + 116px), 0)
+      }
+    }
+
+    .newsletter-flappy .content .headline {
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-top: 0;
+      font-size: 35px;
+      margin-bottom: 15px
+    }
+
+    .newsletter-flappy .content .text {
+      font-size: 16px;
+      margin-bottom: 20px
+    }
+
+    .newsletter-flappy .close-button {
+      position: absolute;
+      top: 0;
+      right: 5px;
+      width: 47px;
+      height: 47px;
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      background-color: #fff;
+      border: 2px solid var(--color-primary);
+      border-radius: 9999px
+    }
+
+    @media (min-width: 992px) {
+      .newsletter-flappy .content .text {
+        font-size: 15px
+      }
+
+      .newsletter-flappy .close-button {
+        top: 0;
+        right: 0;
+        -webkit-transform: translate(50%, -50%);
+        -moz-transform: translate(50%, -50%);
+        transform: translate(50%, -50%)
+      }
+    }
+
+    .newsletter-flappy .close-button::after {
+      position: absolute;
+      inset: 0;
+      content: "\00d7";
+      font-size: 38px;
+      line-height: 1.25;
+      color: var(--color-primary);
+      font-weight: 600
+    }
+
+    .newsletter-flappy .xr_form .form-group {
+      padding: unset
+    }
+
+    .newsletter-flappy .xr_form .form-group input[type=text] {
+      background-color: #fff;
+      color: var(--color-dark);
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 16px
+    }
+
+    .newsletter-flappy .xr_form .checkbox-label .inner-checkbox {
+      padding-left: 5px;
+      font-size: 14px
+    }
+
+    .v-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 4;
+      width: 100%;
+      height: 30px;
+      color: var(--color-primary);
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .v-footer .v-footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex
+    }
+
+    .v-footer .v-footer-nav ul li a {
+      color: var(--color-primary);
+      text-decoration: none;
+      padding: 0 10px
+    }
+
+    .v-header {
+      position: sticky;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      overflow-anchor: none;
+      margin: 0 auto;
+      height: var(--utility-header-height-xs)
+    }
+
+    .v-header .wrapper {
+      height: 100%;
+      background-color: var(--color-primary);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, .3)
+    }
+
+    .v-header .inner {
+      position: relative;
+      padding-left: var(--utility-layout-gap);
+      padding-right: var(--utility-layout-gap);
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      width: 100%
+    }
+
+    @media (min-width: 576px) {
+      .v-header .inner {
+        max-width: var(--utility-container-xs)
+      }
+    }
+
+    @media (min-width: 768px) {
+      .v-header {
+        height: var(--utility-header-height-sm)
+      }
+
+      .v-header .inner {
+        max-width: var(--utility-container-sm)
+      }
+    }
+
+    .v-header .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      position: relative
+    }
+
+    .v-header .v-btn.v-btn-menu {
+      width: 30px;
+      height: 30px
+    }
+
+    .v-header .v-btn-holder {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px
+    }
+
+    @media (min-width: 992px) {
+      .v-header {
+        height: var(--utility-header-height-md)
+      }
+
+      .v-header .inner {
+        max-width: var(--utility-container-md)
+      }
+
+      .v-header .v-btn.v-btn-menu {
+        display: none
+      }
+
+      .v-header .v-btn-holder {
+        display: none
+      }
+    }
+
+    .v-header .v-btn-holder button {
+      font-size: 1em;
+      color: var(--color-body)
+    }
+
+    .v-header .logo-holder {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      z-index: 1;
+      align-self: flex-start;
+      height: calc(100% + 20px);
+      width: 90px;
+      padding: 15px;
+      display: flex;
+      justify-content: center
+    }
+
+    .v-header .logo-holder .logo {
+      height: 1em;
+      width: 1em;
+      color: var(--color-body);
+      z-index: 2;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1;
+      font-size: 38.5px
+    }
+
+    .v-header .logo-holder .flickenteppich {
+      position: absolute;
+      left: 0;
+      bottom: 0
+    }
+
+    .v-header .logo-holder .flickenteppich:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 4px;
+      border-radius: 4px;
+      transform: translateY(-100%);
+      background-color: var(--color-primary);
+      width: 100%
+    }
+
+    .v-header .logo-holder .flickenteppich .flickenteppich-img {
+      width: 90px;
+      height: auto;
+      filter: drop-shadow(0 3px 2px rgba(0 0 0 / 30%));
+      z-index: -1
+    }
+
+    @media (min-width: 992px) {
+      .v-header .logo-holder {
+        width: 180px;
+        height: calc(100% + 40px);
+        position: relative;
+        transform: none;
+        left: auto;
+        top: auto
+      }
+
+      .v-header .logo-holder .logo {
+        font-size: 77px
+      }
+
+      .v-header .logo-holder .flickenteppich .flickenteppich-img {
+        width: 180px
+      }
+    }
+
+    .v-header .v-menu {
+      position: fixed;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      padding: calc(var(--utility-header-height-dynamic) * 2) 15px 15px;
+      width: 100%;
+      height: var(--app-height);
+      background-color: var(--color-primary);
+      flex: 1 0 auto;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      overscroll-behavior: contain;
+      transform: translateY(-100%)
+    }
+
+    .v-header .v-menu .v-menu-item {
+      color: var(--color-body);
+      font-size: 14px;
+      opacity: .75;
+      padding: 20px 15px
+    }
+
+    .v-header .v-menu .v-menu-item:not(:last-of-type) {
+      border-bottom: 1px solid var(--color-body)
+    }
+
+    @media (min-width: 992px) {
+      .v-header .v-menu {
+        position: static;
+        z-index: 0;
+        padding: 0;
+        height: 100%;
+        overflow: visible;
+        gap: 15px;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 30px;
+        transform: translateY(0)
+      }
+
+      .v-header .v-menu .v-menu-item {
+        font-size: 20px;
+        padding: 0
+      }
+
+      .v-header .v-menu .v-menu-item:not(:last-of-type) {
+        border-bottom: 0
+      }
+    }
+
+    .v-header .v-menu .v-menu-item.active {
+      font-weight: 700;
+      opacity: 1
+    }
+
+    .v-oida-event-detail-container {
+      display: none;
+      position: absolute;
+      top: 0;
+      z-index: 3;
+      background-color: #fff;
+      width: 100vw
+    }
+
+    .section-map #xs-oida-map-canvas {
+      width: 100%;
+      height: 80vh
+    }
+
+    .v-oida-main .v-container {
+      padding-top: 20px
+    }
+
+    @media (min-width: 576px) {
+      .v-oida-main .v-container {
+        padding-top: 25.83333333px
+      }
+    }
+
+    @media (min-width: 768px) {
+      .v-oida-main .v-container {
+        padding-top: 31.66666667px
+      }
+    }
+
+    @media (min-width: 992px) {
+      .v-oida-main .v-container {
+        padding-top: 37.5px
+      }
+
+      .v-filter .v-filter-inner .v-close {
+        display: none
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .v-header {
+        height: var(--utility-header-height-lg)
+      }
+
+      .v-header .inner {
+        max-width: var(--utility-container-lg)
+      }
+
+      .v-oida-main .v-container {
+        padding-top: 43.33333333px
+      }
+
+      .form-holder .xs-oida-filter-search-suggestions-container {
+        width: 100%
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .v-header {
+        height: var(--utility-header-height-xl)
+      }
+
+      .v-header .inner {
+        max-width: var(--utility-container-xl)
+      }
+
+      .v-oida-main .v-container {
+        padding-top: 49.16666667px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .v-header {
+        height: var(--utility-header-height-xxl)
+      }
+
+      .v-header .inner {
+        max-width: var(--utility-container-xxl)
+      }
+
+      .v-oida-main .v-container {
+        padding-top: 55px
+      }
+    }
+
+    .v-filter .v-filter-inner .v-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 15px;
+      z-index: 10
+    }
+
+    .form-holder .xs-oida-filter-search-suggestions-container {
+      display: none;
+      overflow: hidden;
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-left: 1px solid var(--color-primary);
+      border-right: 1px solid var(--color-primary);
+      border-bottom: 1px solid var(--color-primary);
+      background-color: #fff;
+      padding-top: 0;
+      border-radius: 0 0 15px 15px;
+      width: 100%
+    }
+
+    .form-holder .xs-oida-filter-search-term-clear-button {
+      display: none
+    }
+
+    .form-holder .xs-oida-filter-search-suggestions-container {
+      display: none;
+      overflow: hidden;
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-left: 1px solid var(--color-primary);
+      border-right: 1px solid var(--color-primary);
+      border-bottom: 1px solid var(--color-primary);
+      background-color: #fff;
+      padding-top: 0;
+      border-radius: 0 0 15px 15px
+    }
+
+    .form-holder .xs-oida-filter-search-suggestions-container .xs-oida-filter-search-suggestions {
+      list-style: none;
+      padding: 0
+    }
+
+    .v-collapse-input.region {
+      margin: 10px 0;
+      line-height: 1
+    }
+
+    .v-collapse-input.region [type=radio]~.label-text {
+      opacity: .5
+    }
+
+    .xs-oida-top-filter .js-mini-slider .track {
+      padding-top: 25px;
+      padding-bottom: 10px;
+      --columns: 2.5
+    }
+
+    .xs-oida-top-filter .form-group {
+      margin: 0
+    }
+
+    .xs-oida-top-filter .form-group [type=radio]~.fake-figure {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 3px 6px rgba(0 0 0 / 16%);
+      overflow: hidden
+    }
+
+    .xs-oida-top-filter .form-group [type=radio]~.fake-figure .media-holder {
+      padding-top: 100%;
+      position: relative
+    }
+
+    .xs-oida-top-filter .form-group [type=radio]~.fake-figure .media-holder .img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: var(--color-body);
+      width: 100%;
+      border-radius: 0 0 15px 15px
+    }
+
+    .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+      font-size: 12px;
+      padding: .3em 0;
+      text-align: center;
+      font-weight: 500
+    }
+
+    .v-oida-top {
+      padding-top: 60px;
+      padding-bottom: 30px;
+      background-color: var(--color-primary);
+      background-image: radial-gradient(circle, var(--color-accent) 0, var(--color-primary) 100%);
+      overflow: hidden
+    }
+
+    .v-oida-top .v-container h2 {
+      color: var(--color-body);
+      font-size: 25px;
+      font-weight: 700
+    }
+
+    @media (min-width: 576px) {
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-top: 30px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-bottom: 10px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        --columns: 3
+      }
+
+      .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+        font-size: 13.33333333px
+      }
+
+      .v-oida-top {
+        padding-top: 70px
+      }
+
+      .v-oida-top {
+        padding-bottom: 35px
+      }
+
+      .v-oida-top .v-container h2 {
+        font-size: 28.33333333px
+      }
+
+      .v-oida-top .js-mini-slider .track {
+        --columns: 2.5
+      }
+    }
+
+    @media (min-width: 768px) {
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-top: 35px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-bottom: 10px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        --columns: 4
+      }
+
+      .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+        font-size: 14.66666667px
+      }
+
+      .v-oida-top {
+        padding-top: 80px
+      }
+
+      .v-oida-top {
+        padding-bottom: 40px
+      }
+
+      .v-oida-top .v-container h2 {
+        font-size: 31.66666667px
+      }
+
+      .v-oida-top .js-mini-slider .track {
+        --columns: 3.5
+      }
+    }
+
+    @media (min-width: 992px) {
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-top: 40px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-bottom: 10px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        --columns: 5
+      }
+
+      .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+        font-size: 16px
+      }
+
+      .v-oida-top {
+        padding-top: 90px
+      }
+
+      .v-oida-top {
+        padding-bottom: 45px
+      }
+
+      .v-oida-top .v-container h2 {
+        font-size: 35px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-top: 45px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-bottom: 10px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        --columns: 6
+      }
+
+      .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+        font-size: 17.33333333px
+      }
+
+      .v-oida-top {
+        padding-top: 100px
+      }
+
+      .v-oida-top {
+        padding-bottom: 50px
+      }
+
+      .v-oida-top .v-container h2 {
+        font-size: 38.33333333px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-top: 50px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-bottom: 10px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        --columns: 7
+      }
+
+      .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+        font-size: 18.66666667px
+      }
+
+      .v-oida-top {
+        padding-top: 110px
+      }
+
+      .v-oida-top {
+        padding-bottom: 55px
+      }
+
+      .v-oida-top .v-container h2 {
+        font-size: 41.66666667px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-top: 55px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        padding-bottom: 10px
+      }
+
+      .xs-oida-top-filter .js-mini-slider .track {
+        --columns: 8
+      }
+
+      .xs-oida-top-filter .form-group [type=radio]~.fake-figure .content-holder .title {
+        font-size: 20px
+      }
+
+      .v-oida-top {
+        padding-top: 120px
+      }
+
+      .v-oida-top {
+        padding-bottom: 60px
+      }
+
+      .v-oida-top .v-container h2 {
+        font-size: 45px
+      }
+    }
+
+    .v-oida-top .js-mini-slider {
+      --gap: 15px
+    }
+
+    .v-oida-top .js-mini-slider .track {
+      --columns: 1.5;
+      gap: 15px
+    }
+
+    .v-oida-top .js-mini-slider .track .single-item {
+      flex: 0 0 calc((100% / var(--columns)) - var(--gap) + (var(--gap)/ var(--columns)))
+    }
+
+    .v-oida-top .v-top-event {
+      position: relative;
+      border-radius: 15px;
+      box-shadow: 0 3px 6px rgba(0 0 0 / 16%);
+      overflow: hidden;
+      color: var(--color-body)
+    }
+
+    .v-oida-top .v-top-event .media-holder {
+      position: relative;
+      padding-top: 113.31658291%;
+      background-color: #e2e5e7;
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+      background-size: 200px 100%;
+      background-repeat: no-repeat;
+      background-position: left -200px top 0;
+      -webkit-animation: 1s infinite shine;
+      animation: 1s infinite shine
+    }
+
+    .v-oida-top .v-top-event .media-holder .xs-oida-event-top-tile-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .v-oida-top .v-top-event .content-holder {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+      padding: 15px 50px 15px 15px
+    }
+
+    .v-oida-top .v-top-event .content-holder .title {
+      font-size: 20px;
+      color: inherit;
+      margin-bottom: 15px
+    }
+
+    @media (min-width: 576px) {
+      .v-oida-top .v-top-event .content-holder .title {
+        font-size: 21.66666667px
+      }
+    }
+
+    @media (min-width: 768px) {
+      .v-oida-top .v-top-event .content-holder .title {
+        font-size: 23.33333333px
+      }
+    }
+
+    @media (min-width: 992px) {
+      .v-oida-top .v-top-event .content-holder .title {
+        font-size: 25px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .v-oida-top .v-top-event .content-holder .title {
+        font-size: 26.66666667px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .v-oida-top .v-top-event .content-holder .title {
+        font-size: 28.33333333px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .v-oida-top .v-top-event .content-holder .title {
+        font-size: 30px
+      }
+    }
+
+    .v-oida-top .v-top-event .content-holder .info {
+      color: inherit;
+      font-size: 14px
+    }
+
+    @media (min-width: 576px) {
+      .v-oida-top .v-top-event .content-holder .info {
+        font-size: 14.33333333px
+      }
+    }
+
+    @media (min-width: 768px) {
+      .v-oida-top .v-top-event .content-holder .info {
+        font-size: 14.66666667px
+      }
+    }
+
+    @media (min-width: 992px) {
+      .v-oida-top .v-top-event .content-holder .info {
+        font-size: 15px
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .v-oida-top .v-top-event .content-holder .info {
+        font-size: 15.33333333px
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .v-oida-top .v-top-event .content-holder .info {
+        font-size: 15.66666667px
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .v-oida-top .v-top-event .content-holder .info {
+        font-size: 16px
+      }
+    }
+
+    :root {
+      /* BASE */
+      /*--color-primary: #911963;*/
+      --color-primary: #621645;
+      --color-secondary: #FCF5FA;
+      --color-accent: #911963;
+      --font-primary: "hind-siliguri", Helvetica, Calibri, Sans-Serif;
+      --font-secondary: "hind-siliguri", Helvetica, Calibri, Sans-Serif;
+      /* COMPONENTS */
+      --color-body: #FFFFFF;
+      --color-font: #911963;
+      --color-dark: #707070;
+      --color-light: #FFFFFF;
+      /* THEME */
+      --color-1: #7E3143;
+      --color-2: #BFBFBF;
+      --color-3: #AC9D7B;
+      --color-4: #715E54;
+      --color-5: #D9D9D9;
+      --color-6: red;
+      --color-7: red;
+      --color-8: red;
+      --color-9: red;
+      --color-10: red;
+      --color-shop-green: #70BE73;
+      --color-shop-yellow: #EAAA45;
+      --color-shop-red: #D02949;
+      /* UTILS */
+      --utility-defaults-transition: 300ms;
+      --utility-header-height-xs: 50px;
+      --utility-header-height-sm: 50px;
+      --utility-header-height-md: 89px;
+      --utility-header-height-lg: 89px;
+      --utility-header-height-xl: 89px;
+      --utility-header-height-xxl: 89px;
+      --utility-footer-height-xs: 40px;
+      --utility-footer-height-sm: 40px;
+      --utility-footer-height-md: 80px;
+      --utility-footer-height-lg: 80px;
+      --utility-footer-height-xl: 80px;
+      --utility-footer-height-xxl: 80px;
+      --utility-layout-section-spacing-xs: 35px;
+      --utility-layout-section-spacing-sm: 40px;
+      --utility-layout-section-spacing-md: 45px;
+      --utility-layout-section-spacing-lg: 50px;
+      --utility-layout-section-spacing-xl: 55px;
+      --utility-layout-section-spacing-xxl: 60px;
+      --utility-container-xs: 540px;
+      --utility-container-sm: 720px;
+      --utility-container-md: 960px;
+      --utility-container-lg: 1140px;
+      --utility-container-xl: 1320px;
+      --utility-container-xxl: 1520px;
+      --utility-layout-gap: 15px;
+      --utility-layout-16-9: 56.25%;
+      --utility-layout-9-16: 177.77777777778%;
+      --utility-layout-4-3: 75%;
+      --utility-layout-3-2: 66.666666666667%;
+      --utility-layout-1-1: 100%;
+      /* FIGMA */
+      --dropdown-auswah-schatten: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  <link rel="stylesheet" href="https://www.yournextstories.com/xassets/static/323.css">
+  <link rel="stylesheet" href="./style/main.css">
+
+</head>
+
+<body class="body">
+  <header class="v-header initialized" data-class="Atom" data-template-name="xs_defaults_atom_header_stoebern"
+    id="id-67fab0ddacaba">
+    <div class="wrapper">
+      <div class="inner">
+        <div class="logo-holder">
+
+          <a class="logo icon after icon-oida" href="https://www.yournextstories.com/de/stoebern.html"></a>
+
+          <div class="flickenteppich">
+            <img nolazy="1" class="flickenteppich-img"
+              src="https://www.yournextstories.com/xstorage/1/_cache/20240614/bow_dark_245934_1_a79fa37b0b5b1715e7bb71f85737a957.svg"
+              width="180" height="40" alt="">
+          </div>
+        </div>
+
+        <button class="v-btn v-btn-menu js --hamburger --hamburger--slider" title="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22.269" height="15.262" viewBox="0 0 22.269 15.262">
+            <g transform="translate(1.5 1.5)">
+              <path
+                d="M15.765,1.5H0A1.5,1.5,0,0,1-1.5,0,1.5,1.5,0,0,1,0-1.5H15.765a1.5,1.5,0,0,1,1.5,1.5A1.5,1.5,0,0,1,15.765,1.5Z"
+                fill="#fff"></path>
+              <path
+                d="M19.268,1.5H0A1.5,1.5,0,0,1-1.5,0,1.5,1.5,0,0,1,0-1.5H19.268a1.5,1.5,0,0,1,1.5,1.5A1.5,1.5,0,0,1,19.268,1.5Z"
+                transform="translate(0 6.131)" fill="#fff"></path>
+              <path
+                d="M9.634,1.5H0A1.5,1.5,0,0,1-1.5,0,1.5,1.5,0,0,1,0-1.5H9.634a1.5,1.5,0,0,1,1.5,1.5A1.5,1.5,0,0,1,9.634,1.5Z"
+                transform="translate(0 12.262)" fill="#fff"></path>
+            </g>
+          </svg>
+
+        </button>
+
+        <div class="v-btn-holder">
+          <button class="v-btn v-btn-link icon after icon-heart-empty js-xs-oida-event-wishlist-show"></button>
+
+          <button class="v-filter-trigger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="25" viewBox="0 0 29 25">
+              <g transform="translate(-329 -43)">
+                <rect width="29" height="25" rx="2" transform="translate(329 43)" fill="#fff"></rect>
+                <path d="M22,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H22a.5.5,0,0,1,.5.5A.5.5,0,0,1,22,.5Z"
+                  transform="translate(332.5 49.5)" fill="#911963"></path>
+                <circle cx="2.5" cy="2.5" r="2.5" transform="translate(334 47)" fill="#fff"></circle>
+                <path d="M2.5,1A1.5,1.5,0,1,0,4,2.5,1.5,1.5,0,0,0,2.5,1m0-1A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z"
+                  transform="translate(334 47)" fill="#911963"></path>
+                <path d="M22,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H22a.5.5,0,0,1,.5.5A.5.5,0,0,1,22,.5Z"
+                  transform="translate(354.5 55.5) rotate(180)" fill="#911963"></path>
+                <circle cx="2.5" cy="2.5" r="2.5" transform="translate(353 58) rotate(180)" fill="#fff"></circle>
+                <path d="M2.5,1A1.5,1.5,0,1,0,4,2.5,1.5,1.5,0,0,0,2.5,1m0-1A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z"
+                  transform="translate(353 58) rotate(180)" fill="#911963"></path>
+                <path d="M22,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H22a.5.5,0,0,1,.5.5A.5.5,0,0,1,22,.5Z"
+                  transform="translate(354.5 61.5) rotate(180)" fill="#911963"></path>
+                <circle cx="2.5" cy="2.5" r="2.5" transform="translate(344 64) rotate(180)" fill="#fff"></circle>
+                <path d="M2.5,1A1.5,1.5,0,1,0,4,2.5,1.5,1.5,0,0,0,2.5,1m0-1A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z"
+                  transform="translate(344 64) rotate(180)" fill="#911963"></path>
+              </g>
+            </svg>
+          </button>
+
+        </div>
+
+        <nav class="v-menu initialized" data-class="Atom" data-template-name="xs_defaults_atom_menu_stoebern"
+          id="id-67fab0ddb01c5">
+
+
+          <a class="v-menu-item active" href="https://www.yournextstories.com/de/stoebern.html" title="Stöbern">
+            Stöbern
+          </a>
+
+          <a class="v-menu-item js-xs-oida-event-wishlist-show" title="Favoriten" style="cursor: pointer;">
+            <span class="icon after icon-heart-empty" style="font-size: 80%;"></span> Favoriten
+          </a>
+
+          <a class="v-menu-item" href="https://www.yournextstories.com/de/kostenlos-partner-werden.html"
+            title="Partnerbereich">
+            Partnerbereich
+          </a>
+
+
+
+        </nav>
+      </div>
+    </div>
+  </header>
+  <article class="main v-oida-main">
+    <section class="teaser"></section>
+    <div class="js-xs-oida-top-filter xs-oida-top-filter">
+
+      <div class="js-mini-slider mini-col-sm-10 seamless">
+        <div class="track initialized">
+          <label class="form-group single-item" for="TOP-230">
+            <input type="radio" name="TOP_CATEGORY" value="230" id="TOP-230" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_neu_272665_1_ee5b288e778a6d14b6bb39b238332955.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_neu_272665_1_ee5b288e778a6d14b6bb39b238332955.webp">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_neu_272665_1_ee5b288e778a6d14b6bb39b238332955.webp"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_neu_272665_1_ee5b288e778a6d14b6bb39b238332955.webp"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Neu
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-231">
+            <input type="radio" name="TOP_CATEGORY" value="231" id="TOP-231" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20241129/todays_highlight_301343_1_fd163aff46baba0ea08c2b2ed5340b3b.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20241129/todays_highlight_301343_1_fd163aff46baba0ea08c2b2ed5340b3b.webp">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20241129/todays_highlight_301343_1_fd163aff46baba0ea08c2b2ed5340b3b.webp"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20241129/todays_highlight_301343_1_fd163aff46baba0ea08c2b2ed5340b3b.webp"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Last Minute
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-229">
+            <input type="radio" name="TOP_CATEGORY" value="229" id="TOP-229" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_angebote_272664_1_fffbe9a4136ca163bd79d4702b0cf573.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_angebote_272664_1_fffbe9a4136ca163bd79d4702b0cf573.webp">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_angebote_272664_1_fffbe9a4136ca163bd79d4702b0cf573.webp"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20240912/kategorie_angebote_272664_1_fffbe9a4136ca163bd79d4702b0cf573.webp"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Angebote
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-88">
+            <input type="radio" name="TOP_CATEGORY" value="88" id="TOP-88" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kurse_4734_1_152952e5e109324c38fd823a34a21f05.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kurse_4734_1_152952e5e109324c38fd823a34a21f05.webp">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kurse_4734_1_152952e5e109324c38fd823a34a21f05.jpg"
+                    type="image/jpeg"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kurse_4734_1_152952e5e109324c38fd823a34a21f05.jpg">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kurse_4734_1_152952e5e109324c38fd823a34a21f05.jpg"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kurse_4734_1_152952e5e109324c38fd823a34a21f05.jpg"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Kurs
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-182">
+            <input type="radio" name="TOP_CATEGORY" value="182" id="TOP-182" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Unterhaltung_4732_1_52042b7806d3b9aff00821d73ae3f551.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Unterhaltung_4732_1_52042b7806d3b9aff00821d73ae3f551.webp">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Unterhaltung_4732_1_52042b7806d3b9aff00821d73ae3f551.jpg"
+                    type="image/jpeg"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Unterhaltung_4732_1_52042b7806d3b9aff00821d73ae3f551.jpg">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Unterhaltung_4732_1_52042b7806d3b9aff00821d73ae3f551.jpg"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Unterhaltung_4732_1_52042b7806d3b9aff00821d73ae3f551.jpg"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Unterhaltung
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-183">
+            <input type="radio" name="TOP_CATEGORY" value="183" id="TOP-183" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kultur_4728_1_41badd104a51883a477f8577adec53c8.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kultur_4728_1_41badd104a51883a477f8577adec53c8.webp">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kultur_4728_1_41badd104a51883a477f8577adec53c8.jpg"
+                    type="image/jpeg"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kultur_4728_1_41badd104a51883a477f8577adec53c8.jpg">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kultur_4728_1_41badd104a51883a477f8577adec53c8.jpg"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Kultur_4728_1_41badd104a51883a477f8577adec53c8.jpg"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Kultur
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-186">
+            <input type="radio" name="TOP_CATEGORY" value="186" id="TOP-186" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Entspannung_4729_1_da2b112b3e263960dab8156ccf15d5bf.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Entspannung_4729_1_da2b112b3e263960dab8156ccf15d5bf.webp">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Entspannung_4729_1_da2b112b3e263960dab8156ccf15d5bf.jpg"
+                    type="image/jpeg"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Entspannung_4729_1_da2b112b3e263960dab8156ccf15d5bf.jpg">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Entspannung_4729_1_da2b112b3e263960dab8156ccf15d5bf.jpg"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Entspannung_4729_1_da2b112b3e263960dab8156ccf15d5bf.jpg"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Entspannung
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-205">
+            <input type="radio" name="TOP_CATEGORY" value="205" id="TOP-205" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Sport_4727_1_4e564d9a90106cdeb0d435364bcc6541.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Sport_4727_1_4e564d9a90106cdeb0d435364bcc6541.webp">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Sport_4727_1_4e564d9a90106cdeb0d435364bcc6541.jpg"
+                    type="image/jpeg"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Sport_4727_1_4e564d9a90106cdeb0d435364bcc6541.jpg">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Sport_4727_1_4e564d9a90106cdeb0d435364bcc6541.jpg"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Sport_4727_1_4e564d9a90106cdeb0d435364bcc6541.jpg"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Sport
+                </h6>
+              </div>
+            </div>
+          </label>
+          <label class="form-group single-item" for="TOP-154">
+            <input type="radio" name="TOP_CATEGORY" value="154" id="TOP-154" form="top-form"
+              class="js-xs-oida-event-category-filter">
+            <div class="fake-figure">
+              <div class="media-holder">
+
+                <picture class=" picture-lazyloaded">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Museum_4746_1_17d8b6e265b7cad849a5291fcfe90adf.webp"
+                    type="image/webp"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Museum_4746_1_17d8b6e265b7cad849a5291fcfe90adf.webp">
+                  <source
+                    data-srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Museum_4746_1_17d8b6e265b7cad849a5291fcfe90adf.jpg"
+                    type="image/jpeg"
+                    srcset="https://www.yournextstories.com/xstorage/1/_cache/20210330/Museum_4746_1_17d8b6e265b7cad849a5291fcfe90adf.jpg">
+                  <img
+                    data-src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Museum_4746_1_17d8b6e265b7cad849a5291fcfe90adf.jpg"
+                    class="img lazyloaded"
+                    src="https://www.yournextstories.com/xstorage/1/_cache/20210330/Museum_4746_1_17d8b6e265b7cad849a5291fcfe90adf.jpg"
+                    width="312" height="312" alt="" lazy="1">
+                </picture>
+              </div>
+              <div class="content-holder">
+                <h6 class="title" style="font-size: 20px;">
+                  Museum
+                </h6>
+              </div>
+            </div>
+          </label>
+
+        </div>
+      </div>
+
+      <form class="js-xs-oida-top-form" id="top-form"></form>
+    </div>
+    <div class="v-container">
+      <div class="row">
+        <div class="col-12">
+          <div class="v-filter">
+            <div class="v-filter-inner d-flex flex-row">
+              <button class="v-close icon after icon-close">
+
+              </button>
+
+              <div class="xs-oida-filter-container js-xs-oida-filter-container d-none">
+                <div class="v-search">
+                  <div class="form-holder">
+                    <form class="sitesearch-form js-xs-oida-search-term-container">
+                      <input class="xs-oida-filter-search-term js-xs-oida-filter-search-term" type="text"
+                        placeholder="Suchst du was bestimmtes?" name="QUERY">
+                      <span
+                        class="xs-oida-filter-search-term-clear-button js-xs-oida-filter-search-term-clear-button">✖</span>
+                    </form>
+                    <div
+                      class="xs-oida-filter-search-suggestions-container js-xs-oida-filter-search-suggestions-container">
+                      <ul class="js-xs-oida-filter-search-suggestions xs-oida-filter-search-suggestions"></ul>
+                    </div>
+                  </div>
+                </div>
+                <form class="js-xs-oida-filter-form xs-oida-filter-form flex-row w-100">
+                  <div class="filter col-4">
+                    <h3 class="mb-2">Soll es genauer sein?</h3>
+                    <div class="mb-2">
+
+                      <span class="sod_select " tabindex="0" data-cycle="false" data-links="false"
+                        data-links-external="false" data-placeholder-option="false" data-filter=""><span
+                          class="sod_label">Uhrzeit</span><span class="sod_list_wrapper"><span class="sod_list"
+                            style="max-height: 280px;"><span class="sod_option  selected active " title="Uhrzeit"
+                              data-value="0">Uhrzeit</span><span class="sod_option " title="06:00"
+                              data-value="6">06:00</span><span class="sod_option " title="07:00"
+                              data-value="7">07:00</span><span class="sod_option " title="08:00"
+                              data-value="8">08:00</span><span class="sod_option " title="09:00"
+                              data-value="9">09:00</span><span class="sod_option " title="10:00"
+                              data-value="10">10:00</span><span class="sod_option " title="11:00"
+                              data-value="11">11:00</span><span class="sod_option " title="12:00"
+                              data-value="12">12:00</span><span class="sod_option " title="13:00"
+                              data-value="13">13:00</span><span class="sod_option " title="14:00"
+                              data-value="14">14:00</span><span class="sod_option " title="15:00"
+                              data-value="15">15:00</span><span class="sod_option " title="16:00"
+                              data-value="16">16:00</span><span class="sod_option " title="17:00"
+                              data-value="17">17:00</span><span class="sod_option " title="18:00"
+                              data-value="18">18:00</span><span class="sod_option " title="19:00"
+                              data-value="19">19:00</span><span class="sod_option " title="20:00"
+                              data-value="20">20:00</span><span class="sod_option " title="21:00"
+                              data-value="21">21:00</span><span class="sod_option " title="22:00"
+                              data-value="22">22:00</span><span class="sod_option " title="23:00"
+                              data-value="23">23:00</span></span></span><select name="time"
+                          class="js-xs-oida-filter-time w-100">
+                          <option value="0">Uhrzeit</option>
+                          <option value="6">06:00</option>
+                          <option value="7">07:00</option>
+                          <option value="8">08:00</option>
+                          <option value="9">09:00</option>
+                          <option value="10">10:00</option>
+                          <option value="11">11:00</option>
+                          <option value="12">12:00</option>
+                          <option value="13">13:00</option>
+                          <option value="14">14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
+                          <option value="17">17:00</option>
+                          <option value="18">18:00</option>
+                          <option value="19">19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
+                          <option value="22">22:00</option>
+                          <option value="23">23:00</option>
+                        </select></span>
+                    </div>
+                    <div class="mb-2">
+
+                      <span class="sod_select " tabindex="0" data-cycle="false" data-links="false"
+                        data-links-external="false" data-placeholder-option="false" data-filter=""><span
+                          class="sod_label">Personen</span><span class="sod_list_wrapper"><span class="sod_list"
+                            style="max-height: 280px;"><span class="sod_option  selected active " title="Personen"
+                              data-value="0">Personen</span><span class="sod_option " title="1"
+                              data-value="1">1</span><span class="sod_option " title="2" data-value="2">2</span><span
+                              class="sod_option " title="3" data-value="3">3</span><span class="sod_option " title="4"
+                              data-value="4">4</span><span class="sod_option " title="5" data-value="5">5</span><span
+                              class="sod_option " title="6+" data-value="6">6+</span></span></span><select
+                          name="persons" class="js-xs-oida-filter-persons w-100">
+                          <option value="0">Personen</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6+</option>
+                        </select></span>
+                    </div>
+                    <div class="mb-2">
+
+                      <span class="sod_select " tabindex="0" data-cycle="false" data-links="false"
+                        data-links-external="false" data-placeholder-option="false" data-filter=""><span
+                          class="sod_label">Location</span><span class="sod_list_wrapper"><span class="sod_list"
+                            style="max-height: 120px;"><span class="sod_option  selected active " title="Location"
+                              data-value="0">Location</span><span class="sod_option " title="Zuhause"
+                              data-value="1">Zuhause</span><span class="sod_option " title="Auswärts"
+                              data-value="2">Auswärts</span></span></span><select name="is-home"
+                          class="js-xs-oida-filter-is-home oida-checkbox w-100">
+                          <option value="0">Location</option>
+                          <option value="1">Zuhause</option>
+                          <option value="2">Auswärts</option>
+                        </select></span>
+                    </div>
+                    <div class="checkbox">
+                      <label class="form-group v-checkbox mb-1">
+                        <input type="checkbox" name="child_friendly" value="1"
+                          class="js-xs-oida-filter-child-friendly oida-checkbox">
+                        <div class="fakebox"></div>
+                        <span class="text">Kinderfreundlich</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="form-group v-checkbox mb-1">
+                        <input type="checkbox" name="handicapped" value="1"
+                          class="js-xs-oida-filter-handicapped oida-checkbox">
+                        <div class="fakebox"></div>
+                        <span class="text">Barrierefrei</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="form-group v-checkbox mb-1">
+                        <input type="checkbox" name="events_only" value="1"
+                          class="js-xs-oida-filter-events-only oida-checkbox">
+                        <div class="fakebox"></div>
+                        <span class="text">Nur Events anzeigen</span>
+                      </label>
+                    </div>
+                    <div class="text-center my-3">
+                      <button class="v-btn v-btn-primary d-flex mx-auto justify-content-center">Anwenden</button>
+                    </div>
+                  </div>
+                  <div class="filter col-4">
+
+
+                    <div class="v-atom v-collapse-input initialized" data-class="Atom"
+                      data-template-name="xs_oida_atom_collapse_input" id="id67faacfbb2421"
+                      oninput="fe_content.doFilterRegion()">
+                      <button class="v-trigger" type="button" data-toggle="collapse" data-target="#id67faacfbb2424"
+                        aria-expanded="false" aria-controls="id67faacfbb2424">
+                        <span class="replacer">
+                          Oberösterreich
+                        </span> <i class="icon after icon-arrow-down"></i>
+                      </button>
+                      <div class="collapse" id="id67faacfbb2424">
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="1">
+                          <span class="label-text">
+                            Wien
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="3">
+                          <span class="label-text">
+                            Oberösterreich
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="4">
+                          <span class="label-text">
+                            Burgenland
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="5">
+                          <span class="label-text">
+                            Kärnten
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="6">
+                          <span class="label-text">
+                            Niederösterreich
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="7">
+                          <span class="label-text">
+                            Salzburg
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="8">
+                          <span class="label-text">
+                            Steiermark
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="9">
+                          <span class="label-text">
+                            Tirol
+                          </span>
+                        </label>
+                        <label class="v-collapse-input region">
+                          <input type="radio" name="EVENT_CITY" value="10">
+                          <span class="label-text">
+                            Vorarlberg
+                          </span>
+                        </label>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter col-4">
+                    <div class="js-xs-oida-event-calendar xs-oida-event-calendar flatpickr-input" readonly="readonly">
+                    </div>
+                    <div class="flatpickr-calendar animate inline" tabindex="-1">
+                      <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg
+                            version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 17 17">
+                            <g></g>
+                            <path
+                              d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z">
+                            </path>
+                          </svg></span>
+                        <div class="flatpickr-month">
+                          <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months"
+                              aria-label="Month" tabindex="-1">
+                              <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
+                              <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">Mai</option>
+                              <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">Juni</option>
+                              <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">Juli</option>
+                              <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
+                              <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
+                              <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">Oktober</option>
+                              <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
+                              <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">Dezember</option>
+                            </select>
+                            <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
+                                aria-label="Year" min="2025"><span class="arrowUp"></span><span
+                                class="arrowDown"></span></div>
+                          </div>
+                        </div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17">
+                            <g></g>
+                            <path
+                              d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z">
+                            </path>
+                          </svg></span>
+                      </div>
+                      <div class="flatpickr-innerContainer">
+                        <div class="flatpickr-rContainer">
+                          <div class="flatpickr-weekdays">
+                            <div class="flatpickr-weekdaycontainer">
+                              <span class="flatpickr-weekday">
+                                Mo</span><span class="flatpickr-weekday">Di</span><span
+                                class="flatpickr-weekday">Mi</span><span class="flatpickr-weekday">Do</span><span
+                                class="flatpickr-weekday">Fr</span><span class="flatpickr-weekday">Sa</span><span
+                                class="flatpickr-weekday">So
+                              </span>
+                            </div>
+                          </div>
+                          <div class="flatpickr-days" tabindex="-1">
+                            <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
+                                aria-label="März 31, 2025" data-filter="31.03.2025">31</span><span
+                                class="flatpickr-day flatpickr-disabled event" aria-label="April 1, 2025"
+                                data-filter="01.04.2025">1</span><span class="flatpickr-day flatpickr-disabled"
+                                aria-label="April 2, 2025" data-filter="02.04.2025">2</span><span
+                                class="flatpickr-day flatpickr-disabled event" aria-label="April 3, 2025"
+                                data-filter="03.04.2025">3</span><span class="flatpickr-day flatpickr-disabled event"
+                                aria-label="April 4, 2025" data-filter="04.04.2025">4</span><span
+                                class="flatpickr-day flatpickr-disabled event" aria-label="April 5, 2025"
+                                data-filter="05.04.2025">5</span><span class="flatpickr-day flatpickr-disabled event"
+                                aria-label="April 6, 2025" data-filter="06.04.2025">6</span><span
+                                class="flatpickr-day flatpickr-disabled event" aria-label="April 7, 2025"
+                                data-filter="07.04.2025">7</span><span class="flatpickr-day flatpickr-disabled event"
+                                aria-label="April 8, 2025" data-filter="08.04.2025">8</span><span
+                                class="flatpickr-day flatpickr-disabled event" aria-label="April 9, 2025"
+                                data-filter="09.04.2025">9</span><span class="flatpickr-day flatpickr-disabled event"
+                                aria-label="April 10, 2025" data-filter="10.04.2025">10</span><span
+                                class="flatpickr-day flatpickr-disabled event" aria-label="April 11, 2025"
+                                data-filter="11.04.2025">11</span><span class="flatpickr-day today event"
+                                aria-label="April 12, 2025" aria-current="date" tabindex="-1"
+                                data-filter="12.04.2025">12</span><span class="flatpickr-day event"
+                                aria-label="April 13, 2025" tabindex="-1" data-filter="13.04.2025">13</span><span
+                                class="flatpickr-day event" aria-label="April 14, 2025" tabindex="-1"
+                                data-filter="14.04.2025">14</span><span class="flatpickr-day event"
+                                aria-label="April 15, 2025" tabindex="-1" data-filter="15.04.2025">15</span><span
+                                class="flatpickr-day event" aria-label="April 16, 2025" tabindex="-1"
+                                data-filter="16.04.2025">16</span><span class="flatpickr-day event"
+                                aria-label="April 17, 2025" tabindex="-1" data-filter="17.04.2025">17</span><span
+                                class="flatpickr-day event" aria-label="April 18, 2025" tabindex="-1"
+                                data-filter="18.04.2025">18</span><span class="flatpickr-day event"
+                                aria-label="April 19, 2025" tabindex="-1" data-filter="19.04.2025">19</span><span
+                                class="flatpickr-day event" aria-label="April 20, 2025" tabindex="-1"
+                                data-filter="20.04.2025">20</span><span class="flatpickr-day event"
+                                aria-label="April 21, 2025" tabindex="-1" data-filter="21.04.2025">21</span><span
+                                class="flatpickr-day event" aria-label="April 22, 2025" tabindex="-1"
+                                data-filter="22.04.2025">22</span><span class="flatpickr-day event"
+                                aria-label="April 23, 2025" tabindex="-1" data-filter="23.04.2025">23</span><span
+                                class="flatpickr-day event" aria-label="April 24, 2025" tabindex="-1"
+                                data-filter="24.04.2025">24</span><span class="flatpickr-day event"
+                                aria-label="April 25, 2025" tabindex="-1" data-filter="25.04.2025">25</span><span
+                                class="flatpickr-day event" aria-label="April 26, 2025" tabindex="-1"
+                                data-filter="26.04.2025">26</span><span class="flatpickr-day event"
+                                aria-label="April 27, 2025" tabindex="-1" data-filter="27.04.2025">27</span><span
+                                class="flatpickr-day event" aria-label="April 28, 2025" tabindex="-1"
+                                data-filter="28.04.2025">28</span><span class="flatpickr-day event"
+                                aria-label="April 29, 2025" tabindex="-1" data-filter="29.04.2025">29</span><span
+                                class="flatpickr-day event" aria-label="April 30, 2025" tabindex="-1"
+                                data-filter="30.04.2025">30</span><span class="flatpickr-day nextMonthDay"
+                                aria-label="Mai 1, 2025" tabindex="-1" data-filter="01.05.2025">1</span><span
+                                class="flatpickr-day nextMonthDay" aria-label="Mai 2, 2025" tabindex="-1"
+                                data-filter="02.05.2025">2</span><span class="flatpickr-day nextMonthDay"
+                                aria-label="Mai 3, 2025" tabindex="-1" data-filter="03.05.2025">3</span><span
+                                class="flatpickr-day nextMonthDay" aria-label="Mai 4, 2025" tabindex="-1"
+                                data-filter="04.05.2025">4</span><span class="flatpickr-day nextMonthDay"
+                                aria-label="Mai 5, 2025" tabindex="-1" data-filter="05.05.2025">5</span><span
+                                class="flatpickr-day nextMonthDay" aria-label="Mai 6, 2025" tabindex="-1"
+                                data-filter="06.05.2025">6</span><span class="flatpickr-day nextMonthDay"
+                                aria-label="Mai 7, 2025" tabindex="-1" data-filter="07.05.2025">7</span><span
+                                class="flatpickr-day nextMonthDay" aria-label="Mai 8, 2025" tabindex="-1"
+                                data-filter="08.05.2025">8</span><span class="flatpickr-day nextMonthDay"
+                                aria-label="Mai 9, 2025" tabindex="-1" data-filter="09.05.2025">9</span><span
+                                class="flatpickr-day nextMonthDay" aria-label="Mai 10, 2025" tabindex="-1"
+                                data-filter="10.05.2025">10</span><span class="flatpickr-day nextMonthDay"
+                                aria-label="Mai 11, 2025" tabindex="-1" data-filter="11.05.2025">11</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-12 mb-5">
+
+
+          <div class="js-xs-oida-activities-container">
+
+
+            <div class="xs-oida-sort section-mt mt-0">
+              <h2 class="h1 headline">
+                Stöbern
+              </h2>
+
+              <div class="xs-oida-sort-holder sod-2">
+                <label>sortieren nach</label>
+                <span class="sod_select " tabindex="0" data-cycle="false" data-links="false" data-links-external="false"
+                  data-placeholder-option="false" data-filter=""><span class="sod_label">Für dich</span><span
+                    class="sod_list_wrapper"><span class="sod_list" style="max-height: 160px;"><span
+                        class="sod_option  selected active " title="Für dich" data-value="0">Für dich</span><span
+                        class="sod_option " title="Derzeit beliebt" data-value="1">Derzeit beliebt</span><span
+                        class="sod_option " title="Entfernung" data-value="2">Entfernung</span><span class="sod_option "
+                        title="Preis" data-value="3">Preis</span></span></span><select name="sort"
+                    class="js-xs-oida-filter-sort xs-oida-filter-sort">
+                    <option value="0">Für dich</option>
+                    <option value="1">Derzeit beliebt</option>
+                    <option value="2">Entfernung</option>
+                    <option value="3">Preis</option>
+
+                  </select></span>
+              </div>
+
+            </div>
+
+            <div class="container justify-content-center">
+              <div class="row g-2 flex-column flex-md-row">
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="80568" data-appid="70110">
+
+                  <script>
+                    document.event_80568 = {
+                      id: 70110,
+                      xpoId: 80568,
+                      title: `Frühjahrskonzert Blasorchester Linz AG Musik`,
+                      teaser: `In einem abwechslungsreichen Programm zeigen die Musiker*innen unter der künstlerischen Leitung...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250327/3868a777d10d87ff5e2c72962911cb56_333068_1_acfc4679e9c6e43c8325c40870833f29.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="80568" data-appid="70110">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250327/3868a777d10d87ff5e2c72962911cb56_333068_1_acfc4679e9c6e43c8325c40870833f29.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="80568" data-appid="70110">
+                        Frühjahrskonzert Blasorchester Linz AG Musik <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Untere Donaulände 7, 4010 Linz
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.3105028" data-lon="14.2927318"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      In einem abwechslungsreichen Programm zeigen die Musiker*innen unter der künstlerischen Leitung
+                      von
+                      Paul Kusen einmal mehr, wie sie durch musikalisches Können gepaart mit Spielfreude und...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="80568" data-appid="70110"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="80568" data-lat="48.3105028" data-lon="14.2927318"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/80568/fruehjahrskonzert-blasorchester-linz-ag-musik.html"
+                        data-type="DETAILS_OPENED" data-id="80568" data-appid="70110"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="283885" data-appid="258303">
+
+                  <script>
+                    document.event_283885 = {
+                      id: 258303,
+                      xpoId: 283885,
+                      title: `JANOSKA ENSEMBLE - Attergauer Kultursommer 2025`,
+                      teaser: `JANOSKA ENSEMBLE - Attergauer Kultursommer 2025 ATTERGAUHALLE ST. GEORGEN DO. 14. AUGUST, 19:00...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/325907bb69b03671f10eaf917da2a3b4_336914_1_fce12e1507c7372b8eadade64da74fc6.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="283885" data-appid="258303">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/325907bb69b03671f10eaf917da2a3b4_336914_1_fce12e1507c7372b8eadade64da74fc6.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="283885" data-appid="258303">
+                        JANOSKA ENSEMBLE - Attergauer Kultursommer 2025 <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Dr. Greil Straße 8, 4880 St. Georgen im Attergau
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="47.9343499" data-lon="13.4854355"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      JANOSKA ENSEMBLE - Attergauer Kultursommer 2025 ATTERGAUHALLE ST. GEORGEN DO. 14. AUGUST, 19:00
+                      UHR
+                      VIVALDI – DIE VIER JAHRESZEITEN IM JANOSKA-STYLE Sie sind alle zwei Jahre Fixstarter bei
+                      unserem...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="283885" data-appid="258303"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="283885" data-lat="47.9343499" data-lon="13.4854355"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/283885/janoska-ensemble-attergauer-kultursommer-2025.html"
+                        data-type="DETAILS_OPENED" data-id="283885" data-appid="258303"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="289111" data-appid="263068">
+
+                  <script>
+                    document.event_289111 = {
+                      id: 263068,
+                      xpoId: 289111,
+                      title: `Satuo, The Tiger Lillies & die Warsaw Village Band am Hof in Pirkenreith!`,
+                      teaser: `Auch in diesem Jahr bewegen sich die VeranstalterInnen des Festivals Heimspiel mit dem Line-up...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/e20a3803df7132108c34904ee1cc2025_337628_1_fa75e13f669a12c3e80eb82f874ae863.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="289111" data-appid="263068">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/e20a3803df7132108c34904ee1cc2025_337628_1_fa75e13f669a12c3e80eb82f874ae863.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="289111" data-appid="263068">
+                        Satuo, The Tiger Lillies &amp; die Warsaw Village Band am Hof in Pirkenreith! <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Pirkenreith 3, 3911 Pirkenreith
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.5006011" data-lon="15.0521529"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Auch in diesem Jahr bewegen sich die VeranstalterInnen des Festivals Heimspiel mit dem Line-up
+                      wieder weit außerhalb des Mainstreams, indem sie am 29. und 30. Mai zwei Bands nach Pirkenreith
+                      holen,...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="289111" data-appid="263068"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="289111" data-lat="48.5006011" data-lon="15.0521529"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/289111/satuo-the-tiger-lillies-die-warsaw-village-band-am-hof-in-pirkenreith!.html"
+                        data-type="DETAILS_OPENED" data-id="289111" data-appid="263068"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="230021" data-appid="205676">
+
+                  <script>
+                    document.event_230021 = {
+                      id: 205676,
+                      xpoId: 230021,
+                      title: `Pracht und Glorie`,
+                      teaser: `Seine Vesperae à 32 komponierte Heinrich Ignaz Franz Biber 1674 für den Salzburger Erzbischof....`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20241106/c92f84add2b9d0d6427b9f15a856a59b_288871_1_3abcc05ff361a09be26de8bb687d1e11.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="230021" data-appid="205676">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20241106/c92f84add2b9d0d6427b9f15a856a59b_288871_1_3abcc05ff361a09be26de8bb687d1e11.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="230021" data-appid="205676">
+                        Pracht und Glorie <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Untere Donaulände 7, 4010 Linz
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.3105028" data-lon="14.2927318"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Seine Vesperae à 32 komponierte Heinrich Ignaz Franz Biber 1674 für den Salzburger Erzbischof. Ein
+                      achtstimmiger Doppelchor, zwei Zinken, drei Posaunen, vier Trompeten, Pauken, Streicher, zwei...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="230021" data-appid="205676"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="230021" data-lat="48.3105028" data-lon="14.2927318"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/230021/pracht-und-glorie.html"
+                        data-type="DETAILS_OPENED" data-id="230021" data-appid="205676"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="229878" data-appid="250954">
+
+                  <script>
+                    document.event_229878 = {
+                      id: 250954,
+                      xpoId: 229878,
+                      title: `Aseo Trio`,
+                      teaser: `Während seines Aufenthalts in den Niederlanden begann der Jazzpianist Aseo Friesacher intensiv an...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20241106/fefaa8cfb49aa400f405514fde4ccbe2_286848_1_2756ab4ca40ec155c0190404a7fb115b.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="229878" data-appid="250954">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20241106/fefaa8cfb49aa400f405514fde4ccbe2_286848_1_2756ab4ca40ec155c0190404a7fb115b.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="229878" data-appid="250954">
+                        Aseo Trio <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Untere Donaulände 7, 4010 Linz
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.3105028" data-lon="14.2927318"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Während seines Aufenthalts in den Niederlanden begann der Jazzpianist Aseo Friesacher intensiv an
+                      seiner eigenen Musik zu arbeiten und eine neue Richtung einzuschlagen: Ein Crossover aus Jazz
+                      und...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="229878" data-appid="250954"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="229878" data-lat="48.3105028" data-lon="14.2927318"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/229878/aseo-trio.html"
+                        data-type="DETAILS_OPENED" data-id="229878" data-appid="250954"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="271808" data-appid="246144">
+
+                  <script>
+                    document.event_271808 = {
+                      id: 246144,
+                      xpoId: 271808,
+                      title: `Serenaden: Moritz Weiß Klezmer Trio`,
+                      teaser: `Den traditionellen Klang in ein neues Gewand hüllen: Moritz Weiß, Niki Waltersdorfer und...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20241106/99577b655d898786ba15411450fed56b_288504_1_61f63e6eab8047efd9561ceba9f3079e.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="271808" data-appid="246144">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20241106/99577b655d898786ba15411450fed56b_288504_1_61f63e6eab8047efd9561ceba9f3079e.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="271808" data-appid="246144">
+                        Serenaden: Moritz Weiß Klezmer Trio <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Promenade 24, 4020 Linz
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.3038862" data-lon="14.2852342"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Den traditionellen Klang in ein neues Gewand hüllen: Moritz Weiß, Niki Waltersdorfer und
+                      Maximilian
+                      Kreuzer spinnen die Geschichte des Klezmers weiter und erzählen diese in einer wunderbar...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="271808" data-appid="246144"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="271808" data-lat="48.3038862" data-lon="14.2852342"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/271808/serenaden:-moritz-weiss-klezmer-trio.html"
+                        data-type="DETAILS_OPENED" data-id="271808" data-appid="246144"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="271793" data-appid="246130">
+
+                  <script>
+                    document.event_271793 = {
+                      id: 246130,
+                      xpoId: 271793,
+                      title: `Ina Regen: ... und näher Tour`,
+                      teaser: `Ina Regen ist für ihre unverwechselbar samtige Stimme und ihre tiefsinnig poetischen Texte...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/0183c3646b32378935afb105e0ab0783_336882_1_9cf1397a40d1c0e8a8ad1c52e63d1e07.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="271793" data-appid="246130">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/0183c3646b32378935afb105e0ab0783_336882_1_9cf1397a40d1c0e8a8ad1c52e63d1e07.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="271793" data-appid="246130">
+                        Ina Regen: ... und näher Tour <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Untere Donaulände 7, 4010 Linz
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.3105028" data-lon="14.2927318"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Ina Regen ist für ihre unverwechselbar samtige Stimme und ihre tiefsinnig poetischen Texte
+                      bekannt.
+                      Diese besonderen Merkmale stellt sie im Winter 2025 nun erstmals mit ihrer "und näher" Tour ins...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="271793" data-appid="246130"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="271793" data-lat="48.3105028" data-lon="14.2927318"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/271793/ina-regen:-und-naeher-tour.html"
+                        data-type="DETAILS_OPENED" data-id="271793" data-appid="246130"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="282315" data-appid="256709">
+
+                  <script>
+                    document.event_282315 = {
+                      id: 256709,
+                      xpoId: 282315,
+                      title: `Osterkonzert - Die lustige Witwe`,
+                      teaser: `Am Sonntag, den 20. April 2025 , um 17:00 Uhr verwandelt sich das Kongress &amp; TheaterHaus in...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/f99e2274137edfe723ffe1bf8fea7018_337398_1_bf2e3455baddb16edae26d0ca9b2c4bc.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="282315" data-appid="256709">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/f99e2274137edfe723ffe1bf8fea7018_337398_1_bf2e3455baddb16edae26d0ca9b2c4bc.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="282315" data-appid="256709">
+                        Osterkonzert - Die lustige Witwe <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Kurhausstrasse 8, 4820 Bad Ischl
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="47.7113316" data-lon="13.6188737"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Am Sonntag, den 20. April 2025 , um 17:00 Uhr verwandelt sich das Kongress &amp; TheaterHaus in
+                      eine
+                      musikalische Bühne für Franz Lehárs weltberühmte Operette „Die lustige Witwe“ – dargeboten in...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="282315" data-appid="256709"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="282315" data-lat="47.7113316" data-lon="13.6188737"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/282315/osterkonzert-die-lustige-witwe.html"
+                        data-type="DETAILS_OPENED" data-id="282315" data-appid="256709"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="278478" data-appid="252915">
+
+                  <script>
+                    document.event_278478 = {
+                      id: 252915,
+                      xpoId: 278478,
+                      title: `Emmeluth’s Amoeba`,
+                      teaser: `Emmeluth’s Amoeba ist ein herausragendes dänisch-norwegisches Quartett, das die skandinavische...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250218/87a0d7b8f40f68e57b1e56b0adf2781e_323010_1_b1878254a6c7b7728af40942b2e52d18.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="278478" data-appid="252915">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250218/87a0d7b8f40f68e57b1e56b0adf2781e_323010_1_b1878254a6c7b7728af40942b2e52d18.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="278478" data-appid="252915">
+                        Emmeluth’s Amoeba <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Elisabethstraße 11, 5020 Salzburg
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="47.8120508" data-lon="13.0416295"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Emmeluth’s Amoeba ist ein herausragendes dänisch-norwegisches Quartett, das die skandinavische
+                      Musikszene mit einer einzigartigen Mischung aus Free Jazz und Kammermusik bereichert. Die Band,...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="278478" data-appid="252915"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="278478" data-lat="47.8120508" data-lon="13.0416295"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/278478/emmeluth’s-amoeba.html"
+                        data-type="DETAILS_OPENED" data-id="278478" data-appid="252915"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="272053" data-appid="246377">
+
+                  <script>
+                    document.event_272053 = {
+                      id: 246377,
+                      xpoId: 272053,
+                      title: `THE LETTNERS COMBO`,
+                      teaser: `The Lettners Combo röhrt, kreischt, trenzt, rockt und schmalzt sich durch Liebesfreud und -Leid...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/5fc9cc28d32028c12bea1bbd7335a864_337779_1_784e430d25bc53860930dfb42f8bb3ee.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="272053" data-appid="246377">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/5fc9cc28d32028c12bea1bbd7335a864_337779_1_784e430d25bc53860930dfb42f8bb3ee.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="272053" data-appid="246377">
+                        THE LETTNERS COMBO <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Bahnhofstraße 12, 4230 Pregarten
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.3555303" data-lon="14.5269792"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      The Lettners Combo röhrt, kreischt, trenzt, rockt und schmalzt sich durch Liebesfreud und -Leid im
+                      Stile der 50er.Mit Pathos und Schmutz, streng analog, stilistisch nicht so puristisch,
+                      komponieren...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="272053" data-appid="246377"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="272053" data-lat="48.3555303" data-lon="14.5269792"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/272053/the-lettners-combo.html"
+                        data-type="DETAILS_OPENED" data-id="272053" data-appid="246377"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="282746" data-appid="257145">
+
+                  <script>
+                    document.event_282746 = {
+                      id: 257145,
+                      xpoId: 282746,
+                      title: `INN4TLER SOMMER: Seven Continents | Hanke Brothers`,
+                      teaser: `Aleksey Igudesman, Geigenvirtuose und Multitalent, vertonte für die Hanke Brothers die sieben...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/2adbf22ad03d49ccd5c82050cb98ecdf_336855_1_db363fe30372d1ed96cf71b6198cbe54.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="282746" data-appid="257145">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/2adbf22ad03d49ccd5c82050cb98ecdf_336855_1_db363fe30372d1ed96cf71b6198cbe54.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="282746" data-appid="257145">
+                        INN4TLER SOMMER: Seven Continents | Hanke Brothers <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Kirchenplatz 13, 4910 Ried im Innkreis
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.2090921" data-lon="13.4900385"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Aleksey Igudesman, Geigenvirtuose und Multitalent, vertonte für die Hanke Brothers die sieben
+                      Kontinente zu einer atemberaubenden Weltreise zwischen Klassik und Pop. Herausgekommen ist ein...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="282746" data-appid="257145"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="282746" data-lat="48.2090921" data-lon="13.4900385"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/282746/inn4tler-sommer:-seven-continents-hanke-brothers.html"
+                        data-type="DETAILS_OPENED" data-id="282746" data-appid="257145"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="275734" data-appid="249948">
+
+                  <script>
+                    document.event_275734 = {
+                      id: 249948,
+                      xpoId: 275734,
+                      title: `Konzert Mattseer DiabelliSommer II - Die Vielfalt des Jazz`,
+                      teaser: `Benjamin Schmid &amp; Biréli LagrèneBenjamin Schmid, der „kompletteste Geiger der Welt“, und...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250114/8492037a9ae56119eced49a6de9dc500_310484_1_6b252a3eb3bb7753c863d8f518f6a2d0.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="275734" data-appid="249948">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250114/8492037a9ae56119eced49a6de9dc500_310484_1_6b252a3eb3bb7753c863d8f518f6a2d0.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="275734" data-appid="249948">
+                        Konzert Mattseer DiabelliSommer II - Die Vielfalt des Jazz <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Passauer Straße 30, 5163 Mattsee
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="47.9735908" data-lon="13.1022848"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Benjamin Schmid &amp; Biréli LagrèneBenjamin Schmid, der „kompletteste Geiger der Welt“, und
+                      Biréli
+                      Lagrène, der legitime Nachfolger von Django Reinhardt an der Gitarre, stehen für exquisiten
+                      Jazz....
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="275734" data-appid="249948"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="275734" data-lat="47.9735908" data-lon="13.1022848"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/275734/konzert-mattseer-diabellisommer-ii-die-vielfalt-des-jazz.html"
+                        data-type="DETAILS_OPENED" data-id="275734" data-appid="249948"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="275297" data-appid="249515">
+
+                  <script>
+                    document.event_275297 = {
+                      id: 249515,
+                      xpoId: 275297,
+                      title: `Daniela de Santos - Die Königin der Kristall-Panflöte`,
+                      teaser: `Jeder hat sich schon irgendwann mal von den Klängen der Panflöte verzaubert gefühlt,   gehört in...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/17f82594efe1bbe6a706c9d83874400e_336287_1_888d5b142fac66fa23dbd9937a267710.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="275297" data-appid="249515">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/17f82594efe1bbe6a706c9d83874400e_336287_1_888d5b142fac66fa23dbd9937a267710.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="275297" data-appid="249515">
+                        Daniela de Santos - Die Königin der Kristall-Panflöte <small
+                          style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Flotzingerplatz 22, 4600 Wels
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.1731464" data-lon="14.0279444"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Jeder hat sich schon irgendwann mal von den Klängen der Panflöte verzaubert gefühlt, gehört in der
+                      Fußgängerzone, im Radio, in einer Fernsehshow oder an einem Urlaubsstrand. Und doch ist wenig...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="275297" data-appid="249515"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="275297" data-lat="48.1731464" data-lon="14.0279444"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/275297/daniela-de-santos-die-koenigin-der-kristall-panfloete.html"
+                        data-type="DETAILS_OPENED" data-id="275297" data-appid="249515"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="273228" data-appid="247416">
+
+                  <script>
+                    document.event_273228 = {
+                      id: 247416,
+                      xpoId: 273228,
+                      title: `Fiori Musicali 2025 "Trummet"`,
+                      teaser: `„Trummet“ ist ein herrlich Instrument, wenn ein guter Meister/ der es wol und künstlich zwingen...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20250403/86a932c606183454ba105809ae4e1ebd_336560_1_ce32c47a20782dc5d6780d46b1b80e76.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="273228" data-appid="247416">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20250403/86a932c606183454ba105809ae4e1ebd_336560_1_ce32c47a20782dc5d6780d46b1b80e76.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="273228" data-appid="247416">
+                        Fiori Musicali 2025 "Trummet" <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Stiftstraße 1, 4490 St. Florian
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="48.2063916" data-lon="14.3773884"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      „Trummet“ ist ein herrlich Instrument, wenn ein guter Meister/ der es wol und künstlich zwingen
+                      und
+                      regieren kann / drüber kömt“ Mit dem strahlenden Klang der Trompete genügte man zur Freude der...
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="273228" data-appid="247416"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="273228" data-lat="48.2063916" data-lon="14.3773884"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/273228/fiori-musicali-2025-trummet.html"
+                        data-type="DETAILS_OPENED" data-id="273228" data-appid="247416"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="v-event js-xs-oida-event-tile d-flex flex-column p-0 m-2" style="width: 23%;"
+                  data-id="272808" data-appid="247635">
+
+                  <script>
+                    document.event_272808 = {
+                      id: 247635,
+                      xpoId: 272808,
+                      title: `Upper Austrian Jazz Orchestra`,
+                      teaser: `Upper Austrian Jazz OrchestraFreue dich auf diesen tollen, schwungvollen musikalischen Abend mit...`,
+                      event_image: 'https://www.yournextstories.com/xstorage/1/_cache/20241106/09224ad7ceb6146d11186bd2890fb0bc_289256_1_2d5f55f04d7a59aad195b5874675c494.png',
+                      url: 'https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html'
+                    };
+                  </script>
+
+                  <div class="img-container">
+                    <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                      class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                      data-type="DETAILS_OPENED" data-id="272808" data-appid="247635">
+                      <img
+                        src="https://www.yournextstories.com/xstorage/1/_cache/20241106/09224ad7ceb6146d11186bd2890fb0bc_289256_1_2d5f55f04d7a59aad195b5874675c494.png"
+                        class="img-responsive">
+                    </a>
+                  </div>
+                  <div class="content-holder">
+                    <h6 class="title" style="font-size: 20px;">
+                      <a href="https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                        class="js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        data-type="DETAILS_OPENED" data-id="272808" data-appid="247635">
+                        Upper Austrian Jazz Orchestra <small style="display: block; font-size: 70%;">TOURDATA</small>
+                      </a>
+                    </h6>
+                    <div class="v-infos-holder">
+
+                      <div class="adress_sm">
+
+
+
+
+
+                        Schmiedgasse 13 b, 4822 Bad Goisern am Hallstättersee
+
+
+                      </div>
+
+                      <div class="distance">
+                        <span class="js-xs-oida-event-distance" data-lat="47.6388869" data-lon="13.6194469"></span>
+                      </div>
+                    </div>
+                    <div class="description">
+                      Upper Austrian Jazz OrchestraFreue dich auf diesen tollen, schwungvollen musikalischen Abend mit
+                      dem
+                      Upper Austrian Jazz Orchestra in der Landesmusikschule von Bad Goisern am Hallstättersee....
+                    </div>
+
+                    <div class="price">
+                    </div>
+
+                    <div class="v-badges-holder bg-white" style="border-radius: 0 0 0 10px;">
+                      <button href="#" data-toggle="dropdown" class="v-btn share icon after icon-link"></button>
+
+                      <ul class="share-dropdown dropdown-menu">
+                        <li>
+                          <a data-original-title="Whatsapp" rel="tooltip"
+                            href="https://api.whatsapp.com/send?text=https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                            class="btn btn-whatsapp" target="_blank" data-placement="left">
+                            <i class="fa fa-whatsapp"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Facebook" rel="tooltip"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                            class="btn btn-facebook" target="_blank" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/intent/tweet?url=https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                            target="_blank" class="btn btn-twitter" data-placement="left">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+
+
+                        <li>
+                          <a data-original-title="Email" rel="tooltip" class="btn btn-mail"
+                            href="mailto:?subject=Schau%20was%20ich%20gefunden%20habe&amp;body=https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                            target="_blank" data-placement="left">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <button
+                        class="v-btn wishlist icon after icon-heart-empty xs-oida-event-bookmark js-xs-oida-event-add-wishlist"
+                        data-id="272808" data-appid="247635"></button>
+                    </div>
+                    <div class="v-btn-holder">
+                      <!--<a class="v-btn v-btn-secondary" data-id="272808" data-lat="47.6388869" data-lon="13.6194469"
+                      href="#map" data-toggle="modal" data-target="#xs-oida-modal-map">Wegbeschreibung</a>-->
+                      <a class="card-button card-button__grid v-btn v-btn-primary js-xs-oida-event-track-click-disabled js-xs-oida-event-detail-open"
+                        href="https://www.yournextstories.com/de/stoebern/aktivitaet/272808/upper-austrian-jazz-orchestra.html"
+                        data-type="DETAILS_OPENED" data-id="272808" data-appid="247635"></a>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <script>
+                document.preventLoadMore = false;
+              </script>
+            </div>
+            <div id="js-xs-oida-overview-bottomx"></div>
+          </div>
+          <div class="row js-xs-oida-calendar-events-container"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </article>
+  <footer class="footer"></footer>
+
+</body>
+
+</html>
